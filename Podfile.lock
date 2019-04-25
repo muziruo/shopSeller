@@ -1,0 +1,26 @@
+PODS:
+  - Masonry (1.1.0)
+  - PYSearch (0.9.1)
+  - SDWebImage (5.0.0):
+    - SDWebImage/Core (= 5.0.0)
+  - SDWebImage/Core (5.0.0)
+
+DEPENDENCIES:
+  - Masonry
+  - PYSearch
+  - SDWebImage
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+    - PYSearch
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
+  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
+
+PODFILE CHECKSUM: 958a70f1b2dcdff6dae3457cc748714fbc6237f8
+
+COCOAPODS: 1.5.2
