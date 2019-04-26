@@ -151,6 +151,75 @@
             </objects>
             <point key="canvasLocation" x="388" y="-2020.8395802098953"/>
         </scene>
+        <!--Add Commodity View Controller-->
+        <scene sceneID="fAF-7P-xEG">
+            <objects>
+                <viewController id="40F-X1-iNJ" customClass="addCommodityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zsp-vq-gKX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="irK-94-ZCt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="577"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="YFh-lq-pYf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Odh-VB-MEn">
+                                        <rect key="frame" x="0.0" y="278" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Odh-VB-MEn" id="BA2-iu-ffP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NG-26-IDo">
+                                <rect key="frame" x="20" y="607" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="YPA-iL-OL2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="商品入库"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odz-gy-GQ6">
+                                <rect key="frame" x="235" y="607" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="ae5-Iq-doa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="立即上架"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wL1-CA-O07" firstAttribute="bottom" secondItem="9NG-26-IDo" secondAttribute="bottom" constant="20" id="3jw-cj-t7o"/>
+                            <constraint firstItem="9NG-26-IDo" firstAttribute="top" secondItem="irK-94-ZCt" secondAttribute="bottom" constant="10" id="71Q-ds-7QA"/>
+                            <constraint firstItem="wL1-CA-O07" firstAttribute="trailing" secondItem="odz-gy-GQ6" secondAttribute="trailing" constant="20" id="BYB-0f-9wE"/>
+                            <constraint firstItem="wL1-CA-O07" firstAttribute="trailing" secondItem="irK-94-ZCt" secondAttribute="trailing" id="L2m-xP-1z2"/>
+                            <constraint firstItem="irK-94-ZCt" firstAttribute="leading" secondItem="wL1-CA-O07" secondAttribute="leading" id="Ut8-Tx-Rfa"/>
+                            <constraint firstItem="9NG-26-IDo" firstAttribute="leading" secondItem="wL1-CA-O07" secondAttribute="leading" constant="20" id="e6X-m4-Qa8"/>
+                            <constraint firstItem="wL1-CA-O07" firstAttribute="bottom" secondItem="odz-gy-GQ6" secondAttribute="bottom" constant="20" id="fTF-u3-UfP"/>
+                            <constraint firstItem="irK-94-ZCt" firstAttribute="top" secondItem="wL1-CA-O07" secondAttribute="top" id="hP1-BQ-F7t"/>
+                            <constraint firstItem="odz-gy-GQ6" firstAttribute="top" secondItem="irK-94-ZCt" secondAttribute="bottom" constant="10" id="odv-Wv-kK2"/>
+                            <constraint firstItem="wL1-CA-O07" firstAttribute="bottom" secondItem="irK-94-ZCt" secondAttribute="bottom" constant="70" id="sUw-mh-J27"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wL1-CA-O07"/>
+                    </view>
+                    <connections>
+                        <outlet property="addDepot" destination="9NG-26-IDo" id="u9J-C2-5B6"/>
+                        <outlet property="addSell" destination="odz-gy-GQ6" id="6y6-OP-79g"/>
+                        <outlet property="selectImage" destination="YFh-lq-pYf" id="BTi-rE-Fda"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vLf-GV-g9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1194" y="-2021"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WaR-4h-U2S">
             <objects>
@@ -330,7 +399,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngW-as-piA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282.4000000000001" y="-542.87856071964018"/>
+            <point key="canvasLocation" x="1239" y="-562"/>
         </scene>
         <!--消息-->
         <scene sceneID="CO8-CJ-vat">
@@ -359,7 +428,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLg-rs-YCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="-1265"/>
+            <point key="canvasLocation" x="388" y="-1295"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -403,7 +472,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffC-MA-KhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="-158.77061469265368"/>
+            <point key="canvasLocation" x="404" y="193"/>
         </scene>
         <!--主页-->
         <scene sceneID="3ZV-dI-VjF">
@@ -441,7 +510,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YX3-xV-7Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-551.20000000000005" y="-158.77061469265368"/>
+            <point key="canvasLocation" x="-551" y="193"/>
         </scene>
         <!--统计-->
         <scene sceneID="rOg-EJ-Gbg">
@@ -460,7 +529,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FdK-AP-LRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343.2" y="-542.87856071964018"/>
+            <point key="canvasLocation" x="404" y="-562"/>
         </scene>
     </scenes>
 </document>

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		EA73294EDAEBDEDD8CCF562B /* Pods_shopSeller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88C0CF8E7EC65E68CC99701 /* Pods_shopSeller.framework */; };
 		EE3AABFC2271B9F500A5BC94 /* homeTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = EEB0A706226F628A00066371 /* homeTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE3AAC0722735AA400A5BC94 /* addCommodityViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3AAC0522735AA400A5BC94 /* addCommodityViewController.h */; };
+		EE3AAC0822735AA400A5BC94 /* addCommodityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3AAC0622735AA400A5BC94 /* addCommodityViewController.m */; };
+		EE3AAC0B22735CD900A5BC94 /* addCommodityTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3AAC0922735CD900A5BC94 /* addCommodityTableViewCell.h */; };
+		EE3AAC0C22735CD900A5BC94 /* addCommodityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3AAC0A22735CD900A5BC94 /* addCommodityTableViewCell.m */; };
 		EEB0A6CB226F5B7E00066371 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB0A6CA226F5B7E00066371 /* AppDelegate.m */; };
 		EEB0A6CE226F5B7E00066371 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB0A6CD226F5B7E00066371 /* ViewController.m */; };
 		EEB0A6D1226F5B7E00066371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB0A6CF226F5B7E00066371 /* Main.storyboard */; };
@@ -49,6 +53,10 @@
 		0CC27A414E397B75899BBA13 /* Pods-shopSeller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopSeller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shopSeller/Pods-shopSeller.debug.xcconfig"; sourceTree = "<group>"; };
 		2D7E02B7A3A28E6F1F7AAF4F /* Pods-shopSeller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopSeller.release.xcconfig"; path = "Pods/Target Support Files/Pods-shopSeller/Pods-shopSeller.release.xcconfig"; sourceTree = "<group>"; };
 		C88C0CF8E7EC65E68CC99701 /* Pods_shopSeller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopSeller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE3AAC0522735AA400A5BC94 /* addCommodityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addCommodityViewController.h; sourceTree = "<group>"; };
+		EE3AAC0622735AA400A5BC94 /* addCommodityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addCommodityViewController.m; sourceTree = "<group>"; };
+		EE3AAC0922735CD900A5BC94 /* addCommodityTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addCommodityTableViewCell.h; sourceTree = "<group>"; };
+		EE3AAC0A22735CD900A5BC94 /* addCommodityTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addCommodityTableViewCell.m; sourceTree = "<group>"; };
 		EEB0A6C6226F5B7E00066371 /* shopSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shopSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB0A6C9226F5B7E00066371 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EEB0A6CA226F5B7E00066371 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -196,6 +204,10 @@
 				EEB0A704226F5E2800066371 /* homeTableViewController.m */,
 				EEB0A706226F628A00066371 /* homeTableViewCell.h */,
 				EEB0A707226F628A00066371 /* homeTableViewCell.m */,
+				EE3AAC0522735AA400A5BC94 /* addCommodityViewController.h */,
+				EE3AAC0622735AA400A5BC94 /* addCommodityViewController.m */,
+				EE3AAC0922735CD900A5BC94 /* addCommodityTableViewCell.h */,
+				EE3AAC0A22735CD900A5BC94 /* addCommodityTableViewCell.m */,
 			);
 			path = homePage;
 			sourceTree = "<group>";
@@ -245,7 +257,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE3AAC0B22735CD900A5BC94 /* addCommodityTableViewCell.h in Headers */,
 				EE3AABFC2271B9F500A5BC94 /* homeTableViewCell.h in Headers */,
+				EE3AAC0722735AA400A5BC94 /* addCommodityViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,12 +403,16 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/PYSearch/PYSearch.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/WRNavigationBar/WRNavigationBar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PYSearch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WRNavigationBar.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -430,6 +448,8 @@
 				EEB0A716226F666500066371 /* UIFont+themeUIFont.m in Sources */,
 				EEB0A6CE226F5B7E00066371 /* ViewController.m in Sources */,
 				EEB0A6CB226F5B7E00066371 /* AppDelegate.m in Sources */,
+				EE3AAC0C22735CD900A5BC94 /* addCommodityTableViewCell.m in Sources */,
+				EE3AAC0822735AA400A5BC94 /* addCommodityViewController.m in Sources */,
 				EEB0A712226F661600066371 /* staticticsTableViewCell.m in Sources */,
 				EEB0A705226F5E2800066371 /* homeTableViewController.m in Sources */,
 				EEB0A70F226F636C00066371 /* statisticsTableViewController.m in Sources */,

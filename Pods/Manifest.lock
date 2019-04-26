@@ -4,23 +4,31 @@ PODS:
   - SDWebImage (5.0.0):
     - SDWebImage/Core (= 5.0.0)
   - SDWebImage/Core (5.0.0)
+  - SVProgressHUD (2.2.5)
+  - WRNavigationBar (1.2.0)
 
 DEPENDENCIES:
   - Masonry
   - PYSearch
   - SDWebImage
+  - SVProgressHUD
+  - WRNavigationBar
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Masonry
     - PYSearch
     - SDWebImage
+    - SVProgressHUD
+    - WRNavigationBar
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
   SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  WRNavigationBar: dc952230effbb646785f962587caaac06c60f229
 
-PODFILE CHECKSUM: 958a70f1b2dcdff6dae3457cc748714fbc6237f8
+PODFILE CHECKSUM: bd3f07282ff46e1a339c5c68a6bc1a70efddd284
 
 COCOAPODS: 1.5.2
