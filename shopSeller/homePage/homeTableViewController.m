@@ -11,6 +11,7 @@
 @interface homeTableViewController ()
 
 @property NSArray *functionName;
+@property UIStoryboard *mainStoryBroad;
 
 @end
 
@@ -19,11 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.mainStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
     self.navigationController.navigationBar.barTintColor = UIColor.themeMainColor;
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     self.functionName = @[@"店铺信息管理",@"商品管理",@"评价信息",@"客户"];
+    
+    [SVProgressHUD show];
+    
+    [self getShopInfo];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -31,7 +38,20 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-#pragma mark - Table view data source
+-(void)getShopInfo {
+    NSDictionary *params = @{@"userId":@"5cbc81e6a3180b7832cd059a"};
+    [AVCloud callFunctionInBackground:@"getShopInfo" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+        if (error == nil) {
+            if ([object valueForKey:@"success"]) {
+                self.shopInfo = [object valueForKey:@"results"][0];
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [SVProgressHUD dismiss];
+                }];
+            }
+        }
+    }];
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -59,8 +79,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
-    if (indexPath.row == 1) {
-        <#statements#>
+    if (indexPath.row == 0) {
+        shopInfoManageViewController *shopInfoView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"shopInfoView"];
+        shopInfoView.shopInfo = self.shopInfo;
+        [self.navigationController pushViewController:shopInfoView animated:true];
     }
 }
 

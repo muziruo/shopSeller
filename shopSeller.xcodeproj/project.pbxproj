@@ -30,6 +30,16 @@
 		EEB0A712226F661600066371 /* staticticsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB0A711226F661600066371 /* staticticsTableViewCell.m */; };
 		EEB0A716226F666500066371 /* UIFont+themeUIFont.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB0A715226F666500066371 /* UIFont+themeUIFont.m */; };
 		EEB0A719226F667800066371 /* UIColor+themeUIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB0A718226F667800066371 /* UIColor+themeUIColor.m */; };
+		EED289FF2276A58E007725AE /* commodityListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EED289FD2276A58E007725AE /* commodityListViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EED28A002276A58E007725AE /* commodityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED289FE2276A58E007725AE /* commodityListViewController.m */; };
+		EED28A032276BF61007725AE /* onSellViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EED28A012276BF61007725AE /* onSellViewController.h */; };
+		EED28A042276BF61007725AE /* onSellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED28A022276BF61007725AE /* onSellViewController.m */; };
+		EED28A072276C02B007725AE /* onDepotViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EED28A052276C02B007725AE /* onDepotViewController.h */; };
+		EED28A082276C02B007725AE /* onDepotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED28A062276C02B007725AE /* onDepotViewController.m */; };
+		EED28A0B2276CB68007725AE /* commodityListTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = EED28A092276CB68007725AE /* commodityListTableViewCell.h */; };
+		EED28A0C2276CB68007725AE /* commodityListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EED28A0A2276CB68007725AE /* commodityListTableViewCell.m */; };
+		EED28A0F2276CF51007725AE /* shopInfoManageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EED28A0D2276CF51007725AE /* shopInfoManageViewController.h */; };
+		EED28A102276CF51007725AE /* shopInfoManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED28A0E2276CF51007725AE /* shopInfoManageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +99,16 @@
 		EEB0A715226F666500066371 /* UIFont+themeUIFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+themeUIFont.m"; sourceTree = "<group>"; };
 		EEB0A717226F667800066371 /* UIColor+themeUIColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+themeUIColor.h"; sourceTree = "<group>"; };
 		EEB0A718226F667800066371 /* UIColor+themeUIColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+themeUIColor.m"; sourceTree = "<group>"; };
+		EED289FD2276A58E007725AE /* commodityListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commodityListViewController.h; sourceTree = "<group>"; };
+		EED289FE2276A58E007725AE /* commodityListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = commodityListViewController.m; sourceTree = "<group>"; };
+		EED28A012276BF61007725AE /* onSellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = onSellViewController.h; sourceTree = "<group>"; };
+		EED28A022276BF61007725AE /* onSellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = onSellViewController.m; sourceTree = "<group>"; };
+		EED28A052276C02B007725AE /* onDepotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = onDepotViewController.h; sourceTree = "<group>"; };
+		EED28A062276C02B007725AE /* onDepotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = onDepotViewController.m; sourceTree = "<group>"; };
+		EED28A092276CB68007725AE /* commodityListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commodityListTableViewCell.h; sourceTree = "<group>"; };
+		EED28A0A2276CB68007725AE /* commodityListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = commodityListTableViewCell.m; sourceTree = "<group>"; };
+		EED28A0D2276CF51007725AE /* shopInfoManageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shopInfoManageViewController.h; sourceTree = "<group>"; };
+		EED28A0E2276CF51007725AE /* shopInfoManageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shopInfoManageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				EEB0A713226F662600066371 /* category */,
+				EED289FC2276A577007725AE /* commodityManagePage */,
 				EEB0A700226F5D8200066371 /* homePage */,
 				EEB0A701226F5D8C00066371 /* messagePage */,
 				EEB0A709226F633C00066371 /* orderPage */,
@@ -208,6 +229,8 @@
 				EE3AAC0622735AA400A5BC94 /* addCommodityViewController.m */,
 				EE3AAC0922735CD900A5BC94 /* addCommodityTableViewCell.h */,
 				EE3AAC0A22735CD900A5BC94 /* addCommodityTableViewCell.m */,
+				EED28A0D2276CF51007725AE /* shopInfoManageViewController.h */,
+				EED28A0E2276CF51007725AE /* shopInfoManageViewController.m */,
 			);
 			path = homePage;
 			sourceTree = "<group>";
@@ -250,6 +273,21 @@
 			path = category;
 			sourceTree = "<group>";
 		};
+		EED289FC2276A577007725AE /* commodityManagePage */ = {
+			isa = PBXGroup;
+			children = (
+				EED289FD2276A58E007725AE /* commodityListViewController.h */,
+				EED289FE2276A58E007725AE /* commodityListViewController.m */,
+				EED28A012276BF61007725AE /* onSellViewController.h */,
+				EED28A022276BF61007725AE /* onSellViewController.m */,
+				EED28A052276C02B007725AE /* onDepotViewController.h */,
+				EED28A062276C02B007725AE /* onDepotViewController.m */,
+				EED28A092276CB68007725AE /* commodityListTableViewCell.h */,
+				EED28A0A2276CB68007725AE /* commodityListTableViewCell.m */,
+			);
+			path = commodityManagePage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -257,8 +295,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EED28A032276BF61007725AE /* onSellViewController.h in Headers */,
+				EED28A072276C02B007725AE /* onDepotViewController.h in Headers */,
+				EED28A0F2276CF51007725AE /* shopInfoManageViewController.h in Headers */,
+				EED289FF2276A58E007725AE /* commodityListViewController.h in Headers */,
 				EE3AAC0B22735CD900A5BC94 /* addCommodityTableViewCell.h in Headers */,
 				EE3AABFC2271B9F500A5BC94 /* homeTableViewCell.h in Headers */,
+				EED28A0B2276CB68007725AE /* commodityListTableViewCell.h in Headers */,
 				EE3AAC0722735AA400A5BC94 /* addCommodityViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +443,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-shopSeller/Pods-shopSeller-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AVOSCloud/AVOSCloud.framework",
+				"${BUILT_PRODUCTS_DIR}/JXCategoryView/JXCategoryView.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/PYSearch/PYSearch.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -408,6 +453,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AVOSCloud.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXCategoryView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PYSearch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -446,13 +493,18 @@
 			files = (
 				EEB0A70C226F635300066371 /* orderTableViewController.m in Sources */,
 				EEB0A716226F666500066371 /* UIFont+themeUIFont.m in Sources */,
+				EED28A0C2276CB68007725AE /* commodityListTableViewCell.m in Sources */,
 				EEB0A6CE226F5B7E00066371 /* ViewController.m in Sources */,
 				EEB0A6CB226F5B7E00066371 /* AppDelegate.m in Sources */,
 				EE3AAC0C22735CD900A5BC94 /* addCommodityTableViewCell.m in Sources */,
 				EE3AAC0822735AA400A5BC94 /* addCommodityViewController.m in Sources */,
+				EED28A002276A58E007725AE /* commodityListViewController.m in Sources */,
 				EEB0A712226F661600066371 /* staticticsTableViewCell.m in Sources */,
 				EEB0A705226F5E2800066371 /* homeTableViewController.m in Sources */,
 				EEB0A70F226F636C00066371 /* statisticsTableViewController.m in Sources */,
+				EED28A082276C02B007725AE /* onDepotViewController.m in Sources */,
+				EED28A042276BF61007725AE /* onSellViewController.m in Sources */,
+				EED28A102276CF51007725AE /* shopInfoManageViewController.m in Sources */,
 				EEB0A6DC226F5B7F00066371 /* main.m in Sources */,
 				EEB0A708226F628A00066371 /* homeTableViewCell.m in Sources */,
 				EEB0A719226F667800066371 /* UIColor+themeUIColor.m in Sources */,

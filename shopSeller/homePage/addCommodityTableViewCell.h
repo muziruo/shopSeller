@@ -13,14 +13,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+//普通的单行输入
 @interface addCommodityTableViewCell : UITableViewCell
 
 @property UILabel *inputTitle;
 @property UITextField *inputInfo;
+@property UIView *line;
 
 @end
 
 
+//输入区间，用于比较大量的信息的输入
 @interface addDetailCell : UITableViewCell
 
 @property UILabel *inputTitle;

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "homeTableViewCell.h"
 #import "addCommodityViewController.h"
+#import "shopInfoManageViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *consumerNumber;
 @property (weak, nonatomic) IBOutlet UILabel *collectionNumber;
 @property (weak, nonatomic) IBOutlet UILabel *salesVolume;
+
+
+@property NSDictionary *shopInfo;
 
 @end
 

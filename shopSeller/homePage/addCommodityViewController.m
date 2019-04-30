@@ -57,6 +57,7 @@
             return cell;
         }
     }
+    return nil;
 }
 
 @end

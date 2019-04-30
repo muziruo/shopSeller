@@ -6,4 +6,6 @@ target 'shopSeller' do
     pod 'PYSearch'
     pod 'WRNavigationBar'
     pod 'SVProgressHUD'
+    pod 'JXCategoryView'
+    pod 'AVOSCloud'
 end

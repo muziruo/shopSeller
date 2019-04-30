@@ -10,6 +10,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Shop Info Manage View Controller-->
+        <scene sceneID="po8-Em-edv">
+            <objects>
+                <viewController storyboardIdentifier="shopInfoView" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KVH-Xu-Y9y" customClass="shopInfoManageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xpt-Pe-GWW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3bc-8b-SEi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="577"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YPf-S9-TBD">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YPf-S9-TBD" id="6He-bz-FsW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KVH-Xu-Y9y" id="PRc-GF-9uE"/>
+                                    <outlet property="delegate" destination="KVH-Xu-Y9y" id="qt2-3l-RJG"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYE-X0-wuL">
+                                <rect key="frame" x="30" y="607" width="315" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CYE-X0-wuL" firstAttribute="leading" secondItem="LFH-Fo-UBM" secondAttribute="leading" constant="30" id="4v1-7k-ASK"/>
+                            <constraint firstItem="LFH-Fo-UBM" firstAttribute="trailing" secondItem="3bc-8b-SEi" secondAttribute="trailing" id="D1n-Kx-g9R"/>
+                            <constraint firstItem="3bc-8b-SEi" firstAttribute="leading" secondItem="LFH-Fo-UBM" secondAttribute="leading" id="GOT-Oi-UTj"/>
+                            <constraint firstItem="3bc-8b-SEi" firstAttribute="top" secondItem="LFH-Fo-UBM" secondAttribute="top" id="OsZ-Fa-qPK"/>
+                            <constraint firstItem="LFH-Fo-UBM" firstAttribute="bottom" secondItem="3bc-8b-SEi" secondAttribute="bottom" constant="70" id="ahq-YN-SIK"/>
+                            <constraint firstItem="LFH-Fo-UBM" firstAttribute="trailing" secondItem="CYE-X0-wuL" secondAttribute="trailing" constant="30" id="g47-BE-khf"/>
+                            <constraint firstItem="LFH-Fo-UBM" firstAttribute="bottom" secondItem="CYE-X0-wuL" secondAttribute="bottom" constant="20" id="hkT-jU-AdS"/>
+                            <constraint firstItem="CYE-X0-wuL" firstAttribute="top" secondItem="3bc-8b-SEi" secondAttribute="bottom" constant="10" id="xqp-VL-8Xc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LFH-Fo-UBM"/>
+                    </view>
+                    <connections>
+                        <outlet property="saveInfo" destination="CYE-X0-wuL" id="cft-bY-Sxq"/>
+                        <outlet property="shopInfoTableView" destination="3bc-8b-SEi" id="Kdj-Hh-5LS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTA-AT-dLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="404" y="-2772"/>
+        </scene>
         <!--主页-->
         <scene sceneID="mS8-7j-sI1">
             <objects>
@@ -151,6 +212,21 @@
             </objects>
             <point key="canvasLocation" x="388" y="-2020.8395802098953"/>
         </scene>
+        <!--Commodity List View Controller-->
+        <scene sceneID="fzb-r2-lbJ">
+            <objects>
+                <viewController id="zhV-8y-tZb" customClass="commodityListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aw7-4M-IK4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0cP-ff-bTr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4dn-oH-uVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1303" y="-2021"/>
+        </scene>
         <!--Add Commodity View Controller-->
         <scene sceneID="fAF-7P-xEG">
             <objects>
@@ -218,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLf-GV-g9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="-2021"/>
+            <point key="canvasLocation" x="2239" y="-2021"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WaR-4h-U2S">
@@ -231,7 +307,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="2jq-Pq-Bqu" kind="relationship" relationship="viewControllers" id="O7f-oI-12f"/>
-                        <segue destination="4Zf-WI-BYd" kind="relationship" relationship="viewControllers" id="bsE-lx-q8r"/>
+                        <segue destination="Wss-qg-Kud" kind="relationship" relationship="viewControllers" id="Yxj-Kt-6Rs"/>
                         <segue destination="jQf-sC-l0X" kind="relationship" relationship="viewControllers" id="TZs-HW-E1X"/>
                         <segue destination="bCx-qQ-rK2" kind="relationship" relationship="viewControllers" id="AYm-Hd-c9q"/>
                     </connections>
@@ -446,33 +522,33 @@
             <point key="canvasLocation" x="-1383" y="193"/>
         </scene>
         <!--订单-->
-        <scene sceneID="zzG-Ja-vvY">
+        <scene sceneID="POu-sF-F0s">
             <objects>
-                <tableViewController id="h4a-7x-mZa" customClass="orderTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q6L-6i-CsO">
+                <tableViewController id="rP9-0e-rBT" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wXl-tC-j5J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iIN-6q-jv2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UEu-eP-LH8">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iIN-6q-jv2" id="ej3-A6-wWU">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UEu-eP-LH8" id="Yrc-rH-Xrg">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="h4a-7x-mZa" id="Phe-um-uS9"/>
-                            <outlet property="delegate" destination="h4a-7x-mZa" id="Hgb-oT-INy"/>
+                            <outlet property="dataSource" destination="rP9-0e-rBT" id="8gi-xJ-uoA"/>
+                            <outlet property="delegate" destination="rP9-0e-rBT" id="Nil-F1-MUN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="订单" id="q2e-wD-6TO"/>
+                    <navigationItem key="navigationItem" title="订单" id="AXf-Nw-pWd"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ffC-MA-KhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAV-jA-8Xm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="404" y="193"/>
+            <point key="canvasLocation" x="388" y="192.95352323838082"/>
         </scene>
         <!--主页-->
         <scene sceneID="3ZV-dI-VjF">
@@ -493,25 +569,6 @@
             </objects>
             <point key="canvasLocation" x="-551.20000000000005" y="-2020.8395802098953"/>
         </scene>
-        <!--订单-->
-        <scene sceneID="R6m-Ny-dgn">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Zf-WI-BYd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="订单" id="Ib1-v9-u0C"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wtM-Kk-TdQ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="h4a-7x-mZa" kind="relationship" relationship="rootViewController" id="3u8-lQ-qL5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YX3-xV-7Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-551" y="193"/>
-        </scene>
         <!--统计-->
         <scene sceneID="rOg-EJ-Gbg">
             <objects>
@@ -530,6 +587,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FdK-AP-LRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="404" y="-562"/>
+        </scene>
+        <!--订单-->
+        <scene sceneID="9OJ-4w-yYr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wss-qg-Kud" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="订单" id="rsx-Em-LPq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KdS-Fq-Plp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rP9-0e-rBT" kind="relationship" relationship="rootViewController" id="0bl-s2-XeR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOj-CB-ypR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-551.20000000000005" y="192.95352323838082"/>
         </scene>
     </scenes>
 </document>
