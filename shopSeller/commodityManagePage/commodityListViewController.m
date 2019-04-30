@@ -10,6 +10,8 @@
 
 @interface commodityListViewController ()
 
+@property CGFloat topHeight;
+
 @end
 
 @implementation commodityListViewController
@@ -17,11 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.topHeight = self.navigationController.navigationBar.frame.size.height + UIApplication.sharedApplication.statusBarFrame.size.height;
+    
     //上下架商品分页
-    self.myTitleView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, 50)];
+    self.myTitleView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0,self.navigationController.navigationBar.frame.size.height + UIApplication.sharedApplication.statusBarFrame.size.height, self.view.frame.size.width, 40)];
     self.myTitleView.delegate = self;
-    self.myTitleView.titles =@[@"上架中",@"下架中"];
-    self.myTitleView.titleFont = UIFont.titleFont;
+    self.myTitleView.titles =@[@"上架商品",@"下架商品"];
+    self.myTitleView.titleFont = UIFont.normalFont;
     self.myTitleView.titleColorGradientEnabled = YES;
     self.myTitleView.titleSelectedColor = UIColor.themeMainColor;
     self.myTitleView.titleColor = UIColor.grayColor;
@@ -35,11 +39,13 @@
     self.myTitleView.indicators = @[lineView];
     
     
-    
     self.listContainerView = [[JXCategoryListContainerView alloc] initWithDelegate:self];
-    [self.listContainerView setFrame:CGRectMake(0, 120, self.view.frame.size.width, self.view.frame.size.height - 120)];
+    [self.listContainerView setFrame:CGRectMake(0, self.topHeight + 40, self.view.frame.size.width, self.view.frame.size.height - self.topHeight - 70)];
     [self.view addSubview:self.listContainerView];
     self.myTitleView.contentScrollView = self.listContainerView.scrollView;
+    
+    
+    self.addCommodityButton.backgroundColor = UIColor.themeMainColor;
     // Do any additional setup after loading the view.
 }
 
@@ -60,7 +66,7 @@
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
     switch (index) {
         case 0:
-            
+            return [[onSellViewController alloc] init];
             break;
         case 1:
             

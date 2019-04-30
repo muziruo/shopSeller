@@ -83,6 +83,9 @@
         shopInfoManageViewController *shopInfoView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"shopInfoView"];
         shopInfoView.shopInfo = self.shopInfo;
         [self.navigationController pushViewController:shopInfoView animated:true];
+    }else if (indexPath.row == 1){
+        commodityListViewController *listView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"commodityListView"];
+        [self.navigationController pushViewController:listView animated:true];
     }
 }
 

@@ -11,6 +11,7 @@
 #import "addCommodityViewController.h"
 #import "shopInfoManageViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "commodityListViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

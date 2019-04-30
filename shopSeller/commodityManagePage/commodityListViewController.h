@@ -10,6 +10,7 @@
 #import <JXCategoryView/JXCategoryView.h>
 #import "UIColor+themeUIColor.h"
 #import "UIFont+themeUIFont.h"
+#import "onSellViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property JXCategoryTitleView *myTitleView;
 @property JXCategoryListContainerView *listContainerView;
+
+@property (weak, nonatomic) IBOutlet UIButton *addCommodityButton;
+
 
 @end
 

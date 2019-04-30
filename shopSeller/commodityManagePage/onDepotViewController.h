@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JXCategoryView/JXCategoryView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface onDepotViewController : UIViewController
+@interface onDepotViewController : UIViewController<JXCategoryListContentViewDelegate>
 
 @end
 

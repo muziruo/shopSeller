@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JXCategoryView/JXCategoryView.h>
+#import <Masonry/Masonry.h>
+#import "commodityListTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface onSellViewController : UIViewController
+@interface onSellViewController : UIViewController<JXCategoryListContentViewDelegate, UITableViewDelegate, UITableViewDataSource>
+
+@property UITableView *sellTableView;
 
 @end
 

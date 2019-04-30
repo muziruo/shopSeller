@@ -71,6 +71,36 @@
             </objects>
             <point key="canvasLocation" x="404" y="-2772"/>
         </scene>
+        <!--On Sell View Controller-->
+        <scene sceneID="mdk-wb-Nbb">
+            <objects>
+                <viewController id="36z-IL-atf" customClass="onSellViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DJZ-w2-FG8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hc7-sJ-ZtX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqj-bb-t5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1302" y="-2773"/>
+        </scene>
+        <!--On Depot View Controller-->
+        <scene sceneID="sWB-8C-YvT">
+            <objects>
+                <viewController id="tf6-ih-EQm" customClass="onDepotViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tY7-dC-QWp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="t9p-Xv-0Kw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T3p-jk-z6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2238" y="-2774"/>
+        </scene>
         <!--主页-->
         <scene sceneID="mS8-7j-sI1">
             <objects>
@@ -215,13 +245,38 @@
         <!--Commodity List View Controller-->
         <scene sceneID="fzb-r2-lbJ">
             <objects>
-                <viewController id="zhV-8y-tZb" customClass="commodityListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="commodityListView" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zhV-8y-tZb" customClass="commodityListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aw7-4M-IK4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxy-Jv-S8R">
+                                <rect key="frame" x="40" y="607" width="295" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xaA-IA-MY8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="添加商品">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0cP-ff-bTr" firstAttribute="trailing" secondItem="Uxy-Jv-S8R" secondAttribute="trailing" constant="40" id="YHU-Ga-spu"/>
+                            <constraint firstItem="Uxy-Jv-S8R" firstAttribute="leading" secondItem="0cP-ff-bTr" secondAttribute="leading" constant="40" id="kAK-wS-OzC"/>
+                            <constraint firstItem="0cP-ff-bTr" firstAttribute="bottom" secondItem="Uxy-Jv-S8R" secondAttribute="bottom" constant="20" id="upD-Qg-22i"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0cP-ff-bTr"/>
                     </view>
+                    <connections>
+                        <outlet property="addCommodityButton" destination="Uxy-Jv-S8R" id="TAv-fJ-HKz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dn-oH-uVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

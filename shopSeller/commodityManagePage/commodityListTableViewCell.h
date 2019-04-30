@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIColor+themeUIColor.h"
+#import "UIFont+themeUIFont.h"
+#import <Masonry/Masonry.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface commodityListTableViewCell : UITableViewCell
+
+@property UILabel *commodityName;
+@property UILabel *commodityStatus;
 
 @end
 
