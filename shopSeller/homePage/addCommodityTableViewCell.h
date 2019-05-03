@@ -32,4 +32,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+//功能行，一般是个按钮
+@interface functionCell : UITableViewCell
+
+@property UIButton *functionButton;
+@property UIButton *deleteButton;
+
+@end
+
 NS_ASSUME_NONNULL_END

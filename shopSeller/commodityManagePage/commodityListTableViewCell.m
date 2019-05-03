@@ -36,7 +36,11 @@
         
         UIEdgeInsets namePadding = UIEdgeInsetsMake(20, 30, -20, -30);
         [self.commodityName mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self).with.insets(namePadding);
+            make.left.equalTo(self.mas_left).with.offset(namePadding.left);
+            make.right.equalTo(self.mas_right).with.offset(namePadding.right);
+            make.top.equalTo(self.mas_top).with.offset(namePadding.top);
+            make.bottom.equalTo(self.mas_bottom).with.offset(namePadding.bottom);
+            //make.centerY.equalTo(self.mas_centerY);
         }];
         
     }

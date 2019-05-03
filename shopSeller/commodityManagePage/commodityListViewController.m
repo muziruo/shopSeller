@@ -11,6 +11,7 @@
 @interface commodityListViewController ()
 
 @property CGFloat topHeight;
+@property UIStoryboard *mainStoryBroad;
 
 @end
 
@@ -18,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mainStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     self.topHeight = self.navigationController.navigationBar.frame.size.height + UIApplication.sharedApplication.statusBarFrame.size.height;
     
@@ -40,12 +43,13 @@
     
     
     self.listContainerView = [[JXCategoryListContainerView alloc] initWithDelegate:self];
-    [self.listContainerView setFrame:CGRectMake(0, self.topHeight + 40, self.view.frame.size.width, self.view.frame.size.height - self.topHeight - 70)];
+    [self.listContainerView setFrame:CGRectMake(0, self.topHeight + 40, self.view.frame.size.width, self.view.frame.size.height - self.topHeight - 110)];
     [self.view addSubview:self.listContainerView];
     self.myTitleView.contentScrollView = self.listContainerView.scrollView;
     
     
     self.addCommodityButton.backgroundColor = UIColor.themeMainColor;
+    [self.addCommodityButton addTarget:self action:@selector(goToAddCommodity) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view.
 }
 
@@ -69,13 +73,19 @@
             return [[onSellViewController alloc] init];
             break;
         case 1:
-            
+            return [[onDepotViewController alloc] init];
             break;
         default:
             return nil;
             break;
     }
     return nil;
+}
+
+
+-(void)goToAddCommodity {
+    addCommodityViewController *addView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"addCommodityView"];
+    [self.navigationController pushViewController:addView animated:true];
 }
 
 

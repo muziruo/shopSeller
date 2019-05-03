@@ -12,6 +12,7 @@
 #import "shopInfoManageViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "commodityListViewController.h"
+#import <SDWebImage/SDWebImage.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

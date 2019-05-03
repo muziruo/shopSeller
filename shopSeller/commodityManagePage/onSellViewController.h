@@ -10,6 +10,7 @@
 #import <JXCategoryView/JXCategoryView.h>
 #import <Masonry/Masonry.h>
 #import "commodityListTableViewCell.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

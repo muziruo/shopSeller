@@ -8,4 +8,5 @@ target 'shopSeller' do
     pod 'SVProgressHUD'
     pod 'JXCategoryView'
     pod 'AVOSCloud'
+    pod 'TZImagePickerController'
 end

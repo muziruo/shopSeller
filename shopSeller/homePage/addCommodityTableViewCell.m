@@ -30,6 +30,7 @@
         //self.inputTitle.textAlignment = NSTextLayoutOrientationVertical;
         
         self.inputInfo = [[UITextField alloc] init];
+        self.inputInfo.font = UIFont.normalFontLight;
         
         self.line = [[UIView alloc] init];
         self.line.backgroundColor = UIColor.themeMainColor;
@@ -90,6 +91,7 @@
         self.inputTitle.font = UIFont.normalFontLight;
         
         self.inputInfo = [[UITextView alloc] init];
+        self.inputInfo.font = UIFont.normalFontLight;
         self.inputInfo.layer.borderWidth = 1;
         self.inputInfo.layer.borderColor = UIColor.themeMainColor.CGColor;
         self.inputInfo.layer.cornerRadius = 5;
@@ -119,6 +121,65 @@
     }
     
     return self;
+}
+
+@end
+
+
+
+
+
+@implementation functionCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        self.functionButton = [[UIButton alloc] init];
+        self.functionButton.titleLabel.font = UIFont.descriptionFontLight;
+        self.functionButton.backgroundColor = UIColor.themeMainColor;
+        self.functionButton.titleLabel.textColor = UIColor.whiteColor;
+        self.functionButton.layer.cornerRadius = 10;
+        
+        self.deleteButton = [[UIButton alloc] init];
+        self.deleteButton.titleLabel.font = UIFont.descriptionFontLight;
+        self.deleteButton.backgroundColor = UIColor.stressColor;
+        self.deleteButton.titleLabel.textColor = UIColor.whiteColor;
+        self.deleteButton.layer.cornerRadius = 10;
+        
+        [self addSubview:self.functionButton];
+        [self addSubview:self.deleteButton];
+        
+        UIEdgeInsets buttonPadding = UIEdgeInsetsMake(10, 40, -10, 0);
+        [self.functionButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(20);
+            make.width.mas_equalTo(110);
+            make.top.equalTo(self.mas_top).with.offset(buttonPadding.top);
+            make.left.equalTo(self.mas_left).with.offset(buttonPadding.left);
+            make.bottom.equalTo(self.mas_bottom).with.offset(buttonPadding.bottom);
+            //make.edges.equalTo(self).with.insets(buttonPadding);
+        }];
+        
+        UIEdgeInsets deletePadding = UIEdgeInsetsMake(10, 0, -10, -40);
+        [self.deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(20);
+            make.width.mas_equalTo(110);
+            make.top.equalTo(self.mas_top).with.offset(deletePadding.top);
+            make.right.equalTo(self.mas_right).with.offset(deletePadding.right);
+            make.bottom.equalTo(self.mas_bottom).with.offset(deletePadding.bottom);
+        }];
+    }
+    
+    return self;
+}
+
+
+- (void)layoutSubviews {
+    
 }
 
 @end

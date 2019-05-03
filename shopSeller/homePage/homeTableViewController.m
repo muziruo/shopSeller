@@ -45,6 +45,9 @@
             if ([object valueForKey:@"success"]) {
                 self.shopInfo = [object valueForKey:@"results"][0];
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    NSURL *imageUrl = [NSURL URLWithString:[self.shopInfo valueForKey:@"logoUrl"]];
+                    [self.shopImage sd_setImageWithURL:imageUrl];
+                    self.shopName.text = [self.shopInfo valueForKey:@"name"];
                     [SVProgressHUD dismiss];
                 }];
             }
@@ -87,6 +90,12 @@
         commodityListViewController *listView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"commodityListView"];
         [self.navigationController pushViewController:listView animated:true];
     }
+}
+
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 

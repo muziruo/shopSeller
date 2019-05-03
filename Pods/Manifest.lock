@@ -7,6 +7,7 @@ PODS:
     - SDWebImage/Core (= 5.0.0)
   - SDWebImage/Core (5.0.0)
   - SVProgressHUD (2.2.5)
+  - TZImagePickerController (3.2.0)
   - WRNavigationBar (1.2.0)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - PYSearch
   - SDWebImage
   - SVProgressHUD
+  - TZImagePickerController
   - WRNavigationBar
 
 SPEC REPOS:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - PYSearch
     - SDWebImage
     - SVProgressHUD
+    - TZImagePickerController
     - WRNavigationBar
 
 SPEC CHECKSUMS:
@@ -35,8 +38,9 @@ SPEC CHECKSUMS:
   PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
   SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
   WRNavigationBar: dc952230effbb646785f962587caaac06c60f229
 
-PODFILE CHECKSUM: 3e79f41a8d8c00db61d7e85e4b7ee3167c852139
+PODFILE CHECKSUM: 43ac2062e6e6a66a66e1d59483f0fa7f9639f678
 
 COCOAPODS: 1.5.2

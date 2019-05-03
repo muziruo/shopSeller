@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <JXCategoryView/JXCategoryView.h>
+#import "commodityListTableViewCell.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import <Masonry/Masonry.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface onDepotViewController : UIViewController<JXCategoryListContentViewDelegate>
+@interface onDepotViewController : UIViewController<JXCategoryListContentViewDelegate, UITableViewDelegate, UITableViewDataSource>
+
+@property UITableView *onDepotTableView;
 
 @end
 
