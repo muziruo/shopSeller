@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "homeTableViewCell.h"
+#import "waitShipViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

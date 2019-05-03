@@ -12,6 +12,7 @@
 @interface orderTableViewController ()
 
 @property NSArray *orderStatusTitle;
+@property UIStoryboard *mainStoryBroad;
 
 @end
 
@@ -19,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mainStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     self.orderStatusTitle = @[@"待发货订单",@"待收货",@"待评价",@"已完成"];
     
@@ -32,14 +35,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.orderStatusTitle count];
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -63,6 +65,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
+    if (indexPath.row == 0) {
+        waitShipViewController *shipView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"waitShipView"];
+        [self.navigationController pushViewController:shipView animated:true];
+    }
 }
 
 /*

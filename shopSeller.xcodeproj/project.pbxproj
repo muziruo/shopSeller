@@ -13,6 +13,14 @@
 		EE3AAC0822735AA400A5BC94 /* addCommodityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3AAC0622735AA400A5BC94 /* addCommodityViewController.m */; };
 		EE3AAC0B22735CD900A5BC94 /* addCommodityTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3AAC0922735CD900A5BC94 /* addCommodityTableViewCell.h */; };
 		EE3AAC0C22735CD900A5BC94 /* addCommodityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3AAC0A22735CD900A5BC94 /* addCommodityTableViewCell.m */; };
+		EE3EFFCF227C7CA100B14056 /* waitShipViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3EFFCD227C7CA100B14056 /* waitShipViewController.h */; };
+		EE3EFFD0227C7CA100B14056 /* waitShipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3EFFCE227C7CA100B14056 /* waitShipViewController.m */; };
+		EE3EFFD3227C7CFD00B14056 /* orderTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3EFFD1227C7CFD00B14056 /* orderTableViewCell.h */; };
+		EE3EFFD4227C7CFD00B14056 /* orderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3EFFD2227C7CFD00B14056 /* orderTableViewCell.m */; };
+		EE3EFFD7227C8E8400B14056 /* shipOrderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3EFFD5227C8E8400B14056 /* shipOrderViewController.h */; };
+		EE3EFFD8227C8E8400B14056 /* shipOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3EFFD6227C8E8400B14056 /* shipOrderViewController.m */; };
+		EE3EFFDB227C901100B14056 /* orderDetailTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3EFFD9227C901100B14056 /* orderDetailTableViewCell.h */; };
+		EE3EFFDC227C901100B14056 /* orderDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3EFFDA227C901100B14056 /* orderDetailTableViewCell.m */; };
 		EEB0A6CB226F5B7E00066371 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB0A6CA226F5B7E00066371 /* AppDelegate.m */; };
 		EEB0A6CE226F5B7E00066371 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB0A6CD226F5B7E00066371 /* ViewController.m */; };
 		EEB0A6D1226F5B7E00066371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB0A6CF226F5B7E00066371 /* Main.storyboard */; };
@@ -67,6 +75,14 @@
 		EE3AAC0622735AA400A5BC94 /* addCommodityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addCommodityViewController.m; sourceTree = "<group>"; };
 		EE3AAC0922735CD900A5BC94 /* addCommodityTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addCommodityTableViewCell.h; sourceTree = "<group>"; };
 		EE3AAC0A22735CD900A5BC94 /* addCommodityTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addCommodityTableViewCell.m; sourceTree = "<group>"; };
+		EE3EFFCD227C7CA100B14056 /* waitShipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = waitShipViewController.h; sourceTree = "<group>"; };
+		EE3EFFCE227C7CA100B14056 /* waitShipViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = waitShipViewController.m; sourceTree = "<group>"; };
+		EE3EFFD1227C7CFD00B14056 /* orderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = orderTableViewCell.h; sourceTree = "<group>"; };
+		EE3EFFD2227C7CFD00B14056 /* orderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = orderTableViewCell.m; sourceTree = "<group>"; };
+		EE3EFFD5227C8E8400B14056 /* shipOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shipOrderViewController.h; sourceTree = "<group>"; };
+		EE3EFFD6227C8E8400B14056 /* shipOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shipOrderViewController.m; sourceTree = "<group>"; };
+		EE3EFFD9227C901100B14056 /* orderDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = orderDetailTableViewCell.h; sourceTree = "<group>"; };
+		EE3EFFDA227C901100B14056 /* orderDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = orderDetailTableViewCell.m; sourceTree = "<group>"; };
 		EEB0A6C6226F5B7E00066371 /* shopSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shopSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB0A6C9226F5B7E00066371 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EEB0A6CA226F5B7E00066371 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -258,6 +274,14 @@
 			children = (
 				EEB0A70A226F635300066371 /* orderTableViewController.h */,
 				EEB0A70B226F635300066371 /* orderTableViewController.m */,
+				EE3EFFCD227C7CA100B14056 /* waitShipViewController.h */,
+				EE3EFFCE227C7CA100B14056 /* waitShipViewController.m */,
+				EE3EFFD1227C7CFD00B14056 /* orderTableViewCell.h */,
+				EE3EFFD2227C7CFD00B14056 /* orderTableViewCell.m */,
+				EE3EFFD5227C8E8400B14056 /* shipOrderViewController.h */,
+				EE3EFFD6227C8E8400B14056 /* shipOrderViewController.m */,
+				EE3EFFD9227C901100B14056 /* orderDetailTableViewCell.h */,
+				EE3EFFDA227C901100B14056 /* orderDetailTableViewCell.m */,
 			);
 			path = orderPage;
 			sourceTree = "<group>";
@@ -298,10 +322,14 @@
 				EED28A032276BF61007725AE /* onSellViewController.h in Headers */,
 				EED28A072276C02B007725AE /* onDepotViewController.h in Headers */,
 				EED28A0F2276CF51007725AE /* shopInfoManageViewController.h in Headers */,
+				EE3EFFD3227C7CFD00B14056 /* orderTableViewCell.h in Headers */,
 				EED289FF2276A58E007725AE /* commodityListViewController.h in Headers */,
 				EE3AAC0B22735CD900A5BC94 /* addCommodityTableViewCell.h in Headers */,
 				EE3AABFC2271B9F500A5BC94 /* homeTableViewCell.h in Headers */,
 				EED28A0B2276CB68007725AE /* commodityListTableViewCell.h in Headers */,
+				EE3EFFCF227C7CA100B14056 /* waitShipViewController.h in Headers */,
+				EE3EFFD7227C8E8400B14056 /* shipOrderViewController.h in Headers */,
+				EE3EFFDB227C901100B14056 /* orderDetailTableViewCell.h in Headers */,
 				EE3AAC0722735AA400A5BC94 /* addCommodityViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,11 +523,14 @@
 			files = (
 				EEB0A70C226F635300066371 /* orderTableViewController.m in Sources */,
 				EEB0A716226F666500066371 /* UIFont+themeUIFont.m in Sources */,
+				EE3EFFD8227C8E8400B14056 /* shipOrderViewController.m in Sources */,
 				EED28A0C2276CB68007725AE /* commodityListTableViewCell.m in Sources */,
 				EEB0A6CE226F5B7E00066371 /* ViewController.m in Sources */,
+				EE3EFFDC227C901100B14056 /* orderDetailTableViewCell.m in Sources */,
 				EEB0A6CB226F5B7E00066371 /* AppDelegate.m in Sources */,
 				EE3AAC0C22735CD900A5BC94 /* addCommodityTableViewCell.m in Sources */,
 				EE3AAC0822735AA400A5BC94 /* addCommodityViewController.m in Sources */,
+				EE3EFFD0227C7CA100B14056 /* waitShipViewController.m in Sources */,
 				EED28A002276A58E007725AE /* commodityListViewController.m in Sources */,
 				EEB0A712226F661600066371 /* staticticsTableViewCell.m in Sources */,
 				EEB0A705226F5E2800066371 /* homeTableViewController.m in Sources */,
@@ -510,6 +541,7 @@
 				EEB0A6DC226F5B7F00066371 /* main.m in Sources */,
 				EEB0A708226F628A00066371 /* homeTableViewCell.m in Sources */,
 				EEB0A719226F667800066371 /* UIColor+themeUIColor.m in Sources */,
+				EE3EFFD4227C7CFD00B14056 /* orderTableViewCell.m in Sources */,
 				EEB0A6D4226F5B7E00066371 /* shopSeller.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
