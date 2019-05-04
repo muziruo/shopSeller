@@ -176,7 +176,7 @@
         
         [self addSubview:self.title];
         
-        UIEdgeInsets titlePadding = UIEdgeInsetsMake(10, 30, 10, 30);
+        UIEdgeInsets titlePadding = UIEdgeInsetsMake(10, 20, 10, 20);
         [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self).with.insets(titlePadding);
         }];

@@ -20,6 +20,8 @@
     self.orderInfoTableview.rowHeight = UITableViewAutomaticDimension;
     
     self.shipCommodity.backgroundColor = UIColor.themeMainColor;
+    
+    [self.shipCommodity addTarget:self action:@selector(shipTheCommodity) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view.
 }
 
@@ -91,6 +93,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 15;
+}
+
+
+-(void)shipTheCommodity {
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 @end

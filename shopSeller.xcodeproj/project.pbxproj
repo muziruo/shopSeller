@@ -48,6 +48,10 @@
 		EED28A0C2276CB68007725AE /* commodityListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EED28A0A2276CB68007725AE /* commodityListTableViewCell.m */; };
 		EED28A0F2276CF51007725AE /* shopInfoManageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EED28A0D2276CF51007725AE /* shopInfoManageViewController.h */; };
 		EED28A102276CF51007725AE /* shopInfoManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED28A0E2276CF51007725AE /* shopInfoManageViewController.m */; };
+		EEE2687F227DA6880093FB56 /* editCommodityViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EEE2687D227DA6880093FB56 /* editCommodityViewController.h */; };
+		EEE26880227DA6880093FB56 /* editCommodityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE2687E227DA6880093FB56 /* editCommodityViewController.m */; };
+		EEE26883227DD0270093FB56 /* addModelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EEE26881227DD0270093FB56 /* addModelViewController.h */; };
+		EEE26884227DD0270093FB56 /* addModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE26882227DD0270093FB56 /* addModelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +129,10 @@
 		EED28A0A2276CB68007725AE /* commodityListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = commodityListTableViewCell.m; sourceTree = "<group>"; };
 		EED28A0D2276CF51007725AE /* shopInfoManageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shopInfoManageViewController.h; sourceTree = "<group>"; };
 		EED28A0E2276CF51007725AE /* shopInfoManageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shopInfoManageViewController.m; sourceTree = "<group>"; };
+		EEE2687D227DA6880093FB56 /* editCommodityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = editCommodityViewController.h; sourceTree = "<group>"; };
+		EEE2687E227DA6880093FB56 /* editCommodityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = editCommodityViewController.m; sourceTree = "<group>"; };
+		EEE26881227DD0270093FB56 /* addModelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addModelViewController.h; sourceTree = "<group>"; };
+		EEE26882227DD0270093FB56 /* addModelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addModelViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +316,10 @@
 				EED28A062276C02B007725AE /* onDepotViewController.m */,
 				EED28A092276CB68007725AE /* commodityListTableViewCell.h */,
 				EED28A0A2276CB68007725AE /* commodityListTableViewCell.m */,
+				EEE2687D227DA6880093FB56 /* editCommodityViewController.h */,
+				EEE2687E227DA6880093FB56 /* editCommodityViewController.m */,
+				EEE26881227DD0270093FB56 /* addModelViewController.h */,
+				EEE26882227DD0270093FB56 /* addModelViewController.m */,
 			);
 			path = commodityManagePage;
 			sourceTree = "<group>";
@@ -330,6 +342,8 @@
 				EE3EFFCF227C7CA100B14056 /* waitShipViewController.h in Headers */,
 				EE3EFFD7227C8E8400B14056 /* shipOrderViewController.h in Headers */,
 				EE3EFFDB227C901100B14056 /* orderDetailTableViewCell.h in Headers */,
+				EEE26883227DD0270093FB56 /* addModelViewController.h in Headers */,
+				EEE2687F227DA6880093FB56 /* editCommodityViewController.h in Headers */,
 				EE3AAC0722735AA400A5BC94 /* addCommodityViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,9 +535,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE26880227DA6880093FB56 /* editCommodityViewController.m in Sources */,
 				EEB0A70C226F635300066371 /* orderTableViewController.m in Sources */,
 				EEB0A716226F666500066371 /* UIFont+themeUIFont.m in Sources */,
 				EE3EFFD8227C8E8400B14056 /* shipOrderViewController.m in Sources */,
+				EEE26884227DD0270093FB56 /* addModelViewController.m in Sources */,
 				EED28A0C2276CB68007725AE /* commodityListTableViewCell.m in Sources */,
 				EEB0A6CE226F5B7E00066371 /* ViewController.m in Sources */,
 				EE3EFFDC227C901100B14056 /* orderDetailTableViewCell.m in Sources */,

@@ -49,3 +49,112 @@
 }
 
 @end
+
+
+
+@implementation imageManageCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        self.commodityImage = [[UIImageView alloc] init];
+        self.commodityImage.contentMode = UIViewContentModeScaleAspectFit;
+        
+        [self addSubview:self.commodityImage];
+        
+        UIEdgeInsets imagePadding = UIEdgeInsetsMake(10, 30, -10, 0);
+        [self.commodityImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.mas_top).with.offset(imagePadding.top);
+            make.left.equalTo(self.mas_left).with.offset(imagePadding.left);
+            make.bottom.equalTo(self.mas_bottom).with.offset(imagePadding.bottom);
+            make.height.mas_equalTo(60);
+            make.width.mas_equalTo(60);
+        }];
+    }
+    
+    return self;
+}
+
+@end
+
+
+
+
+
+@implementation addInfoCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        self.addInfo = [[UILabel alloc] init];
+        self.addInfo.font = UIFont.descriptionFontLight;
+        self.addInfo.textColor = UIColor.themeMainColor;
+        
+        [self addSubview:self.addInfo];
+        
+        UIEdgeInsets buttonPadding = UIEdgeInsetsMake(10, 0, -10, 0);
+        [self.addInfo mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.mas_centerX);
+            make.top.equalTo(self.mas_top).with.offset(buttonPadding.top);
+            make.bottom.equalTo(self.mas_bottom).with.offset(buttonPadding.bottom);
+        }];
+    }
+    
+    return self;
+}
+
+@end
+
+
+
+
+@implementation switchCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        self.switchTitle = [[UILabel alloc] init];
+        self.switchTitle.text = @"上架状态";
+        self.switchTitle.font = UIFont.normalFontLight;
+        
+        self.switchButton = [[UISwitch alloc] init];
+        self.switchButton.onTintColor = UIColor.themeMainColor;
+        
+        [self addSubview:self.switchTitle];
+        [self addSubview:self.switchButton];
+        
+        UIEdgeInsets titlePadding = UIEdgeInsetsMake(20, 20, -20, 0);
+        [self.switchTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.mas_top).with.offset(titlePadding.top);
+            make.left.equalTo(self.mas_left).with.offset(titlePadding.left);
+            make.bottom.equalTo(self.mas_bottom).with.offset(titlePadding.bottom);
+            make.width.mas_equalTo(60);
+        }];
+        
+        UIEdgeInsets switchPadding = UIEdgeInsetsMake(0, 0, 0, -20);
+        [self.switchButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.mas_centerY);
+            make.right.equalTo(self.mas_right).with.offset(switchPadding.right);
+            make.width.mas_equalTo(40);
+        }];
+    }
+    
+    return self;
+}
+
+@end

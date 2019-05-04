@@ -20,4 +20,29 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+
+@interface imageManageCell : UITableViewCell
+
+@property UIImageView *commodityImage;
+
+@end
+
+
+
+@interface addInfoCell : UITableViewCell
+
+@property UILabel *addInfo;
+
+@end
+
+
+
+@interface switchCell : UITableViewCell
+
+@property UILabel *switchTitle;
+@property UISwitch *switchButton;
+
+@end
+
 NS_ASSUME_NONNULL_END

@@ -11,6 +11,7 @@
 #import <Masonry/Masonry.h>
 #import "commodityListTableViewCell.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "editCommodityViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
