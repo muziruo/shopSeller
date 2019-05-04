@@ -11,6 +11,7 @@
 @interface waitShipViewController ()
 
 @property NSArray *orderInfo;
+@property UIStoryboard *mainStoryBroad;
 
 @end
 
@@ -18,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mainStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     [self.navigationController setTitle:@"待发货订单"];
     
@@ -72,6 +75,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
+    
+    shipOrderViewController *orderView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"shipView"];
+    [self.navigationController pushViewController:orderView animated:true];
 }
 
 @end

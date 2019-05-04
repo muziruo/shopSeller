@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIColor+themeUIColor.h"
 #import "UIFont+themeUIFont.h"
+#import "orderDetailTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
