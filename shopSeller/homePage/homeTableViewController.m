@@ -51,6 +51,8 @@
                     [SVProgressHUD dismiss];
                 }];
             }
+        }else {
+            [SVProgressHUD dismiss];
         }
     }];
 }

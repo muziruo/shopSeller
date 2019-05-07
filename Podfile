@@ -9,4 +9,5 @@ target 'shopSeller' do
     pod 'JXCategoryView'
     pod 'AVOSCloud'
     pod 'TZImagePickerController'
+    pod 'QMUIKit'
 end

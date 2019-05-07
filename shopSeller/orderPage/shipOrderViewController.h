@@ -10,6 +10,8 @@
 #import "UIColor+themeUIColor.h"
 #import "UIFont+themeUIFont.h"
 #import "orderDetailTableViewCell.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UITableView *orderInfoTableview;
 @property (weak, nonatomic) IBOutlet UIButton *shipCommodity;
+
+@property NSDictionary *orderInfo;
 
 
 @end

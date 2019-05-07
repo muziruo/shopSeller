@@ -53,11 +53,17 @@
                 cell = [[orderDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"infoCell"];
             }
             
-            cell.commodityId.text = @"ajofaheoiaofaoshdfsa";
-            cell.commodityName.text = @"名称名称名称名称名称名称名称名称名称名称名称名称名称名称";
-            cell.commodityModel.text = @"型号";
-            cell.actualPay.text = @"¥2333";
-            cell.commodityNumber.text = @"3";
+            cell.commodityId.text = [[self.orderInfo valueForKey:@"commodity"] valueForKey:@"objectId"];
+            cell.commodityName.text = [[self.orderInfo valueForKey:@"commodity"] valueForKey:@"name"];
+            cell.commodityModel.text = [self.orderInfo valueForKey:@"commodityModel"];
+            
+            NSString *priceTitle = @"¥";
+            NSString *priceString = [NSString stringWithFormat:@"%@",[self.orderInfo valueForKey:@"actualPay"]];
+            priceTitle = [priceTitle stringByAppendingString:priceString];
+            cell.actualPay.text = priceTitle;
+            
+            NSString *numberString = [NSString stringWithFormat:@"%@",[self.orderInfo valueForKey:@"number"]];
+            cell.commodityNumber.text = numberString;
             
             return cell;
         }
@@ -79,9 +85,9 @@
                 cell = [[localCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"localCell"];
             }
             
-            cell.receiptNumber.text = @"15908665907";
-            cell.receiptName.text = @"木子";
-            cell.receiptLocal.text = @"湖北省武汉市武汉理工大学余家头校区";
+            cell.receiptNumber.text = [self.orderInfo valueForKey:@"receiptPhoneNumber"];
+            cell.receiptName.text = [self.orderInfo valueForKey:@"receiptName"];
+            cell.receiptLocal.text = [self.orderInfo valueForKey:@"receiptLocal"];
             
             return cell;
         }
@@ -97,7 +103,16 @@
 
 
 -(void)shipTheCommodity {
-    [self.navigationController popViewControllerAnimated:true];
+    [SVProgressHUD show];
+    
+    NSDictionary *params = @{@"orderId":[self.orderInfo valueForKey:@"objectId"],@"orderStatus":@2};
+    [AVCloud callFunctionInBackground:@"shipOrder" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+        if (error == nil) {
+            [SVProgressHUD showSuccessWithStatus:@"发货成功"];
+            [SVProgressHUD dismissWithDelay:0.8];
+            [self.navigationController popViewControllerAnimated:true];
+        }
+    }];
 }
 
 @end

@@ -26,8 +26,15 @@
     
     self.orderTableview.rowHeight = UITableViewAutomaticDimension;
     
-    [self getShipOrderInfo];
+    
     // Do any additional setup after loading the view.
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [SVProgressHUD show];
+    [self getShipOrderInfo];
+    [SVProgressHUD dismiss];
 }
 
 
@@ -77,6 +84,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
     shipOrderViewController *orderView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"shipView"];
+    orderView.orderInfo = self.orderInfo[indexPath.row];
     [self.navigationController pushViewController:orderView animated:true];
 }
 

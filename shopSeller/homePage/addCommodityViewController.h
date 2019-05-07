@@ -11,11 +11,15 @@
 #import "UIFont+themeUIFont.h"
 #import "addCommodityTableViewCell.h"
 #import <TZImagePickerController/TZImagePickerController.h>
+#import <QMUIKit/QMUIKit.h>
+#import <AVOSCloud/AVOSCloud.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <SDWebImage/SDWebImage.h>
 //#import <SDCycleScrollView/SDCycleScrollView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface addCommodityViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, TZImagePickerControllerDelegate>
+@interface addCommodityViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, TZImagePickerControllerDelegate, QMUIZoomImageViewDelegate, QMUIImagePreviewViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *addDepot;
 @property (weak, nonatomic) IBOutlet UIButton *addSell;
@@ -25,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 //@property SDCycleScrollView *pickedImage;
+@property QMUIImagePreviewView *imagePicker;
 
 
 @end
