@@ -321,6 +321,8 @@
                                 
                                 if (self.infoUpload == 0) {
                                     [SVProgressHUD showSuccessWithStatus:@"上传成功"];
+                                    [SVProgressHUD dismissWithDelay:1.0];
+                                    [self.navigationController popViewControllerAnimated:true];
                                 }
                             }
                         }
@@ -360,6 +362,8 @@
                         self.infoUpload--;
                         if (self.infoUpload == 0) {
                             [SVProgressHUD showSuccessWithStatus:@"上传信息完成"];
+                            [SVProgressHUD dismissWithDelay:1.0];
+                            [self.navigationController popViewControllerAnimated:true];
                         }
                     }
                 }

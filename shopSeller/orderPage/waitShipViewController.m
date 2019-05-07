@@ -22,19 +22,15 @@
     
     self.mainStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    [self.navigationController setTitle:@"待发货订单"];
-    
     self.orderTableview.rowHeight = UITableViewAutomaticDimension;
     
-    
+    self.orderTableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getShipOrderInfo)];
     // Do any additional setup after loading the view.
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    [SVProgressHUD show];
-    [self getShipOrderInfo];
-    [SVProgressHUD dismiss];
+    [self.orderTableview.mj_header beginRefreshing];
 }
 
 
@@ -46,6 +42,7 @@
                 self.orderInfo = [object valueForKey:@"result"];
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     [self.orderTableview reloadData];
+                    [self.orderTableview.mj_header endRefreshing];
                 }];
             }
         }

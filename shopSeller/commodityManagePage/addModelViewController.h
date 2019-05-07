@@ -31,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
 
+@property BOOL addOrEdit;
+
+@property NSDictionary *commodityModel;
+
 
 
 @end

@@ -28,9 +28,9 @@
     
     self.functionName = @[@"店铺信息管理",@"商品管理",@"评价信息",@"客户"];
     
-    [SVProgressHUD show];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getShopInfo)];
     
-    [self getShopInfo];
+    //[self getShopInfo];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -38,8 +38,19 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
+- (void)viewDidAppear:(BOOL)animated {
+    if ([AVUser currentUser] == nil) {
+        loginViewController *loginView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"loginView"];
+        [self presentViewController:loginView animated:true completion:nil];
+    }else{
+        [self.tableView.mj_header beginRefreshing];
+    }
+}
+
+
 -(void)getShopInfo {
-    NSDictionary *params = @{@"userId":@"5cbc81e6a3180b7832cd059a"};
+    NSDictionary *params = @{@"userId":@"5cbc8182c8959c00751357ca"};
     [AVCloud callFunctionInBackground:@"getShopInfo" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
         if (error == nil) {
             if ([object valueForKey:@"success"]) {
@@ -49,10 +60,12 @@
                     [self.shopImage sd_setImageWithURL:imageUrl];
                     self.shopName.text = [self.shopInfo valueForKey:@"name"];
                     [SVProgressHUD dismiss];
+                    [self.tableView.mj_header endRefreshing];
                 }];
             }
         }else {
             [SVProgressHUD dismiss];
+            [self.tableView.mj_header endRefreshing];
         }
     }];
 }

@@ -40,18 +40,29 @@
         make.edges.equalTo(self.view).with.insets(tableviewPadding);
     }];
     
-    [self getOnSellInfo];
+    self.sellTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getOnSellInfo)];
+    
+    //[self getOnSellInfo];
+    [self.sellTableView.mj_header beginRefreshing];
     // Do any additional setup after loading the view.
 }
 
 
 -(void)getOnSellInfo {
-    [AVCloud callFunctionInBackground:@"getHomeCommodity" withParameters:nil block:^(id  _Nullable object, NSError * _Nullable error) {
+    
+    NSDictionary *params = @{
+                             @"shopId":@"5cc1218ad5de2b007361e392",
+                             @"isSell":@1
+                             };
+    [AVCloud callFunctionInBackground:@"shopGetCommodity" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
         if (error == nil) {
-            self.onSellInfo = object;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [self.sellTableView reloadData];
-            }];
+            if ([[object valueForKey:@"success"] boolValue]) {
+                self.onSellInfo = [object valueForKey:@"result"];
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [self.sellTableView reloadData];
+                    [self.sellTableView.mj_header endRefreshing];
+                }];
+            }
         }
     }];
 }
@@ -59,7 +70,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     NSLog(@"界面显示");
-    [self getOnSellInfo];
 }
 
 
@@ -104,6 +114,8 @@
     
     editView.commodityInfo = self.onSellInfo[indexPath.row];
     
+    //editView.delegate = self;
+    
     [[self getCurrentVC].navigationController pushViewController:editView animated:true];
 }
 
@@ -134,6 +146,16 @@
         currentVC = rootVC;
     }
     return currentVC;
+}
+
+
+- (void)refreshSellInfo {
+    [self.sellTableView.mj_header beginRefreshing];
+}
+
+
+- (void)listDidAppear {
+    [self.sellTableView.mj_header beginRefreshing];
 }
 
 @end

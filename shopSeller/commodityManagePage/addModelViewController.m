@@ -49,6 +49,11 @@
         
         cell.inputTitle.text = @"型号";
         
+//        为真表示只是修改库存信息
+        if (self.addOrEdit) {
+            cell.inputInfo.text = [self.commodityModel valueForKey:@"commodityModel"];
+        }
+        
         cell.inputInfo.tag = 101;
         
         return cell;
@@ -61,6 +66,12 @@
         
         cell.inputTitle.text = @"库存";
         
+        if (self.addOrEdit) {
+            //cell.inputInfo.text = [self.commodityModel valueForKey:<#(nonnull NSString *)#>]
+            NSString *number = [NSString stringWithFormat:@"%@",[self.commodityModel valueForKey:@"stockNumber"]];
+            cell.inputInfo.text = number;
+        }
+        
         cell.inputInfo.tag = 102;
         
         return cell;
@@ -72,27 +83,58 @@
 
 -(void)addModelInfo {
     
-    [SVProgressHUD show];
-    UITextField *modelName = [self.view viewWithTag:101];
-    UITextField *modelStock = [self.view viewWithTag:102];
-    int stockInt = [modelStock.text intValue];
-    NSNumber *stock = [NSNumber numberWithInteger:stockInt];
-    
-    NSDictionary *params = @{@"commodityId":[self.commodityInfo valueForKey:@"objectId"],@"commodityModel":modelName.text,@"stockNumber":stock,@"price":@2333};
-    [AVCloud callFunctionInBackground:@"addStock" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
-        if (error == nil) {
-            if ([object valueForKey:@"success"]) {
-                [SVProgressHUD showSuccessWithStatus:@"添加成功"];
-                if ([self.delegate respondsToSelector:@selector(addedModel)]) {
-                    [self.delegate addedModel];
+    if (self.addOrEdit) {
+        
+        [SVProgressHUD show];
+        UITextField *modelName = [self.view viewWithTag:101];
+        UITextField *modelStock = [self.view viewWithTag:102];
+        int stockInt = [modelStock.text intValue];
+        NSNumber *stock = [NSNumber numberWithInteger:stockInt];
+        
+        NSDictionary *params = @{
+                                 @"stockId":[self.commodityModel valueForKey:@"objectId"],
+                                 @"stockNumber":stock,
+                                 @"model":modelName.text
+                                 };
+        [AVCloud callFunctionInBackground:@"resetStock" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+            if (error == nil) {
+                if ([object valueForKey:@"success"]) {
+                    [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+                    [SVProgressHUD dismissWithDelay:0.8];
+                    if ([self.delegate respondsToSelector:@selector(addedModel)]) {
+                        [self.delegate addedModel];
+                    }
+                    [self dismissViewControllerAnimated:true completion:nil];
+                }else {
+                    [SVProgressHUD showErrorWithStatus:@"修改失败"];
+                    [SVProgressHUD dismissWithDelay:0.8];
                 }
-                [self dismissViewControllerAnimated:true completion:nil];
-            }else {
-                [SVProgressHUD showErrorWithStatus:@"添加失败"];
-                [SVProgressHUD dismissWithDelay:0.8];
             }
-        }
-    }];
+        }];
+    }else {
+        
+        [SVProgressHUD show];
+        UITextField *modelName = [self.view viewWithTag:101];
+        UITextField *modelStock = [self.view viewWithTag:102];
+        int stockInt = [modelStock.text intValue];
+        NSNumber *stock = [NSNumber numberWithInteger:stockInt];
+        
+        NSDictionary *params = @{@"commodityId":[self.commodityInfo valueForKey:@"objectId"],@"commodityModel":modelName.text,@"stockNumber":stock,@"price":@2333};
+        [AVCloud callFunctionInBackground:@"addStock" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+            if (error == nil) {
+                if ([object valueForKey:@"success"]) {
+                    [SVProgressHUD showSuccessWithStatus:@"添加成功"];
+                    if ([self.delegate respondsToSelector:@selector(addedModel)]) {
+                        [self.delegate addedModel];
+                    }
+                    [self dismissViewControllerAnimated:true completion:nil];
+                }else {
+                    [SVProgressHUD showErrorWithStatus:@"添加失败"];
+                    [SVProgressHUD dismissWithDelay:0.8];
+                }
+            }
+        }];
+    }
 }
 
 

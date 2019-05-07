@@ -10,4 +10,6 @@ target 'shopSeller' do
     pod 'AVOSCloud'
     pod 'TZImagePickerController'
     pod 'QMUIKit'
+    pod 'MJRefresh'
+    pod 'JVFloatLabeledTextField'
 end

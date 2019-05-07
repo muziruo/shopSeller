@@ -17,6 +17,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol editCommodityViewControllerdelegate <NSObject>
+
+-(void)refreshSellInfo;
+
+@end
+
+
 @interface editCommodityViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, addModelViewControllerDelegate, TZImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *editTableview;
@@ -25,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSDictionary *commodityInfo;
 
 @property NSInteger imageNumber;
+
+@property (nonatomic, weak) id<editCommodityViewControllerdelegate> delegate;
+
 
 @end
 

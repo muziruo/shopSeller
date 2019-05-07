@@ -12,6 +12,7 @@
 
 @property CGFloat topHeight;
 @property NSArray *onDepotInfo;
+@property UIStoryboard *mainStoryBroad;
 
 @end
 
@@ -19,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mainStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 
     self.topHeight = self.navigationController.navigationBar.frame.size.height + UIApplication.sharedApplication.statusBarFrame.size.height;
     
@@ -36,21 +39,41 @@
         make.edges.equalTo(self.view).with.insets(tableviewPadding);
     }];
     
-    [self getOnDepotInfo];
+    self.onDepotTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getOnDepotInfo)];
+    
+    //[self getOnDepotInfo];
+    [self.onDepotTableView.mj_header beginRefreshing];
     // Do any additional setup after loading the view.
 }
 
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+    
+    editCommodityViewController *editView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"editCommodityView"];
+    
+    editView.commodityInfo = self.onDepotInfo[indexPath.row];
+    
+    //editView.delegate = self;
+    
+    [[self getCurrentVC].navigationController pushViewController:editView animated:true];
+}
 
 
 -(void)getOnDepotInfo {
-    [AVCloud callFunctionInBackground:@"getHomeCommodity" withParameters:nil block:^(id  _Nullable object, NSError * _Nullable error) {
+    NSDictionary *params = @{
+                             @"shopId":@"5cc1218ad5de2b007361e392",
+                             @"isSell":@0
+                             };
+    [AVCloud callFunctionInBackground:@"shopGetCommodity" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
         if (error == nil) {
-            self.onDepotInfo = object;
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [self.onDepotTableView reloadData];
-            }];
+            if ([[object valueForKey:@"success"] boolValue]) {
+                self.onDepotInfo = [object valueForKey:@"result"];
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [self.onDepotTableView reloadData];
+                    [self.onDepotTableView.mj_header endRefreshing];
+                }];
+            }
         }
     }];
 }
@@ -84,6 +107,44 @@
     }
     
     return cell;
+}
+
+
+- (UIViewController *)getCurrentVC {
+    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    UIViewController *currentVC = [self getCurrentVCFrom:rootViewController];
+    
+    return currentVC;
+}
+
+- (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVC {
+    UIViewController *currentVC;
+    
+    if ([rootVC presentedViewController]) {
+        // 视图是被presented出来的
+        rootVC = [rootVC presentedViewController];
+    }
+    if ([rootVC isKindOfClass:[UITabBarController class]]) {
+        // 根视图为UITabBarController
+        currentVC = [self getCurrentVCFrom:[(UITabBarController *)rootVC selectedViewController]];
+    } else if ([rootVC isKindOfClass:[UINavigationController class]]){
+        // 根视图为UINavigationController
+        currentVC = [self getCurrentVCFrom:[(UINavigationController *)rootVC visibleViewController]];
+    } else {
+        // 根视图为非导航类
+        currentVC = rootVC;
+    }
+    return currentVC;
+}
+
+
+- (void)refreshSellInfo {
+    [self.onDepotTableView.mj_header beginRefreshing];
+}
+
+- (void)listDidAppear {
+    [self.onDepotTableView.mj_header beginRefreshing];
 }
 
 @end

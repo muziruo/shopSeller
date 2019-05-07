@@ -12,10 +12,11 @@
 #import "commodityListTableViewCell.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "editCommodityViewController.h"
+#import <MJRefresh/MJRefresh.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface onSellViewController : UIViewController<JXCategoryListContentViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface onSellViewController : UIViewController<JXCategoryListContentViewDelegate, UITableViewDelegate, UITableViewDataSource, editCommodityViewControllerdelegate>
 
 @property UITableView *sellTableView;
 
