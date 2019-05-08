@@ -130,6 +130,7 @@
             
             cell.inputTitle.text = @"商品价格";
             cell.inputInfo.tag = 101 + indexPath.row;
+            cell.inputInfo.keyboardType = UIKeyboardTypeDecimalPad;
             
             return cell;
         }else if (indexPath.row == 2){
@@ -171,6 +172,7 @@
                 cell.inputTitle.text = @"型号";
             }else if (indexPath.row % 2 == 1){
                 cell.inputTitle.text = @"库存数量";
+                cell.inputInfo.keyboardType = UIKeyboardTypeNumberPad;
             }
             
             cell.inputInfo.tag = 201 + indexPath.row;

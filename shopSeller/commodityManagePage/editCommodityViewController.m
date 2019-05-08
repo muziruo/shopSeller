@@ -163,6 +163,7 @@
             cell.inputTitle.text = @"商品价格";
             NSString *priceString = [NSString stringWithFormat:@"%@",[self.commodityInfo valueForKey:@"price"]];
             cell.inputInfo.text = priceString;
+            cell.inputInfo.keyboardType = UIKeyboardTypeDecimalPad;
             cell.inputInfo.tag = 102;
             
             return cell;

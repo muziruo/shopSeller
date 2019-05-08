@@ -10,6 +10,8 @@
 
 @interface statisticsTableViewController ()
 
+@property UIStoryboard *mainStoryBroad;
+
 @end
 
 @implementation statisticsTableViewController
@@ -18,6 +20,10 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBar.barTintColor = UIColor.themeMainColor;
+    
+    self.mainStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -29,16 +35,35 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 1;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    functionButtonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"functionCell"];
+    
+    if (!cell) {
+        cell = [[functionButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"functionCell"];
+    }
+    
+    [cell.functionButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
+    
+    return cell;
+}
+
+
+-(void)userLogout {
+    [AVUser logOut];
+    loginViewController *loginView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"loginView"];
+    [self presentViewController:loginView animated:true completion:nil];
 }
 
 /*

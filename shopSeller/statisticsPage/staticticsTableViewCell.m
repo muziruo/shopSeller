@@ -48,3 +48,42 @@
 }
 
 @end
+
+
+
+
+@implementation functionButtonCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        self.functionButton = [[UIButton alloc] init];
+        [self.functionButton setTitle:@"登出" forState:UIControlStateNormal];
+        self.functionButton.backgroundColor = UIColor.stressColor;
+        [self.functionButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+        self.functionButton.layer.cornerRadius = 20;
+        self.functionButton.titleLabel.font = UIFont.normalFontLight
+        ;
+        
+        [self addSubview:self.functionButton];
+        
+        UIEdgeInsets buttonPadding = UIEdgeInsetsMake(10, 30, 10, 30);
+        [self.functionButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self).with.insets(buttonPadding);
+            make.height.mas_equalTo(40);
+        }];
+    }
+    
+    return self;
+}
+
+- (void)layoutSubviews {
+    
+}
+
+@end

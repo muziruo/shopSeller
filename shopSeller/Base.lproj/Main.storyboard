@@ -583,7 +583,7 @@
         <!--统计-->
         <scene sceneID="LPK-V6-iqL">
             <objects>
-                <tableViewController id="SE1-Es-qkt" sceneMemberID="viewController">
+                <tableViewController id="SE1-Es-qkt" customClass="statisticsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Xo-eB-lWU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

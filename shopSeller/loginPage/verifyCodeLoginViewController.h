@@ -1,8 +1,8 @@
 //
-//  listViewController.h
+//  verifyCodeLoginViewController.h
 //  shopUser
 //
-//  Created by 李祎喆 on 2019/4/18.
+//  Created by 李祎喆 on 2019/5/8.
 //  Copyright © 2019 李祎喆. All rights reserved.
 //
 
@@ -16,10 +16,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface listViewController : UIViewController<JXCategoryListContentViewDelegate>
+@interface verifyCodeLoginViewController : UIViewController<JXCategoryListContentViewDelegate>
 
 @property JVFloatLabeledTextField *accountInput;
 @property JVFloatLabeledTextField *passwordInput;
+@property UIButton *getCode;
 @property UIButton *loginButton;
 
 @end

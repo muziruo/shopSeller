@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIColor+themeUIColor.h"
 #import "UIFont+themeUIFont.h"
+#import <Masonry/Masonry.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property UILabel *staticticsTitle;
 @property UILabel *staticticsResult;
 @property UILabel *change;
+
+@end
+
+
+
+@interface functionButtonCell : UITableViewCell
+
+@property UIButton *functionButton;
 
 @end
 
