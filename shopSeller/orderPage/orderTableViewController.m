@@ -65,6 +65,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
+    
+    if ([AVUser currentUser] == nil) {
+        loginViewController *loginView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"loginView"];
+        [self presentViewController:loginView animated:true completion:nil];
+        return;
+    }
+    
     if (indexPath.row == 0) {
         waitShipViewController *shipView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"waitShipView"];
         [self.navigationController pushViewController:shipView animated:true];

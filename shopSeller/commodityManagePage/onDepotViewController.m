@@ -13,6 +13,7 @@
 @property CGFloat topHeight;
 @property NSArray *onDepotInfo;
 @property UIStoryboard *mainStoryBroad;
+@property NSUserDefaults *userSetting;
 
 @end
 
@@ -20,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.userSetting = [NSUserDefaults standardUserDefaults];
     
     self.mainStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 
@@ -62,7 +65,7 @@
 
 -(void)getOnDepotInfo {
     NSDictionary *params = @{
-                             @"shopId":@"5cc1218ad5de2b007361e392",
+                             @"shopId":[self.userSetting valueForKey:@"shopId"],
                              @"isSell":@0
                              };
     [AVCloud callFunctionInBackground:@"shopGetCommodity" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "homeTableViewCell.h"
 #import "waitShipViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "loginViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
