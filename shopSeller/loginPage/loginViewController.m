@@ -10,12 +10,16 @@
 
 @interface loginViewController ()
 
+@property NSUserDefaults *userSetting;
+
 @end
 
 @implementation loginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.userSetting = [NSUserDefaults standardUserDefaults];
     
     //创建标签
     self.myTitleView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, 50)];

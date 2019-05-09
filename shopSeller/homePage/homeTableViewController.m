@@ -12,6 +12,7 @@
 
 @property NSArray *functionName;
 @property UIStoryboard *mainStoryBroad;
+@property NSUserDefaults *userSetting;
 
 @end
 
@@ -50,22 +51,30 @@
 
 
 -(void)getShopInfo {
-    NSDictionary *params = @{@"userId":@"5cbc8182c8959c00751357ca"};
+    
+    NSDictionary *params = @{@"userId":[AVUser currentUser].objectId};
     [AVCloud callFunctionInBackground:@"getShopInfo" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
         if (error == nil) {
-            if ([object valueForKey:@"success"]) {
+            if ([[object valueForKey:@"success"] boolValue]) {
                 self.shopInfo = [object valueForKey:@"results"][0];
+                [self.userSetting setValue:[self.shopInfo valueForKey:@"objectId"] forKey:@"shopId"];
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     NSURL *imageUrl = [NSURL URLWithString:[self.shopInfo valueForKey:@"logoUrl"]];
-                    [self.shopImage sd_setImageWithURL:imageUrl];
+                    [self.shopImage sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"imageReplace-s"]];
                     self.shopName.text = [self.shopInfo valueForKey:@"name"];
                     [SVProgressHUD dismiss];
                     [self.tableView.mj_header endRefreshing];
                 }];
+            }else {
+                [SVProgressHUD showErrorWithStatus:@"未找到店铺信息，请重新登录"];
+                [SVProgressHUD dismissWithDelay:2.0];
+                [self.tableView.mj_header endRefreshing];
+                [AVUser logOut];
+                loginViewController *loginView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"loginView"];
+                [self presentViewController:loginView animated:true completion:nil];
             }
         }else {
-            [SVProgressHUD dismiss];
-            [self.tableView.mj_header endRefreshing];
+            
         }
     }];
 }

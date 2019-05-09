@@ -18,6 +18,7 @@
 @property int imageUpload;
 @property int modelUpload;
 @property NSNumber *isSell;
+@property BOOL choosenImage;
 
 @end
 
@@ -28,6 +29,8 @@
     
     self.modelNumber = 1;
     self.infoUpload = 3;
+    
+    self.choosenImage = false;
     
     self.addSell.backgroundColor = UIColor.stressColor;
     self.addDepot.backgroundColor = UIColor.themeMainColor;
@@ -78,6 +81,7 @@
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
     //self.pickedImage.imageURLStringsGroup = photos;
 //    取出图片之后在此操作
+    self.choosenImage = true;
     self.imageArray = [photos mutableCopy];
     if ([photos count] != 0) {
         [self.selectImage qmui_removeAllSubviews];
@@ -119,6 +123,7 @@
             
             cell.inputTitle.text = @"商品名称";
             cell.inputInfo.tag = 101 + indexPath.row;
+            cell.inputInfo.placeholder = @"请输入商品名称(必填)";
             
             return cell;
         }else if (indexPath.row == 1){
@@ -131,6 +136,7 @@
             cell.inputTitle.text = @"商品价格";
             cell.inputInfo.tag = 101 + indexPath.row;
             cell.inputInfo.keyboardType = UIKeyboardTypeDecimalPad;
+            cell.inputInfo.placeholder = @"请输入商品价格(必填)";
             
             return cell;
         }else if (indexPath.row == 2){
@@ -142,6 +148,7 @@
             
             cell.inputTitle.text = @"商品介绍";
             cell.inputInfo.tag = 101 + indexPath.row;
+            
             
             return cell;
         }
@@ -229,6 +236,13 @@
 
 //添加商品信息
 -(void)addCommodity {
+    if (!self.choosenImage) {
+        [SVProgressHUD showErrorWithStatus:@"您未选择照片"];
+        [SVProgressHUD dismissWithDelay:1.0];
+        return;
+    }
+    
+    
     self.modelUpload = self.modelNumber;
     self.imageUpload = [self.imageArray count];
     self.infoUpload = 4;
@@ -236,18 +250,48 @@
 //    数据收集
 //    名称
     UITextField *nameInput = [self.view viewWithTag:101];
+    if ([nameInput.text isEqual:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入商品名称"];
+        [SVProgressHUD dismissWithDelay:1.0];
+        return;
+    }
 //    价格
     UITextField *priceInput = [self.view viewWithTag:102];
+    if ([priceInput.text isEqual:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入商品价格"];
+        [SVProgressHUD dismissWithDelay:1.0];
+        return;
+    }
+    
     NSNumber *price = [NSNumber numberWithDouble:(priceInput.text).doubleValue];
 //    介绍
     UITextField *introduceInput = [self.view viewWithTag:103];
+    if ([introduceInput.text isEqual:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入商品介绍信息"];
+        [SVProgressHUD dismissWithDelay:1.0];
+        return;
+    }
+    
 //    型号信息收集，利用一个数组来存储多个字典
     NSMutableArray *modelArray = [[NSMutableArray alloc] init];
     for (int i = 0; i < self.modelNumber; i++) {
         UITextField *modelName = [self.view viewWithTag:(201 + i * 2)];
         NSString *modelNameString = modelName.text;
+        if ([modelNameString isEqual:@""]) {
+            [SVProgressHUD showErrorWithStatus:@"请完善型号/库存信息"];
+            [SVProgressHUD dismissWithDelay:1.0];
+            return;
+        }
+        
         UITextField *modelNumberInput = [self.view viewWithTag:(202 + i * 2)];
+        if ([modelNumberInput.text isEqual:@""]) {
+            [SVProgressHUD showErrorWithStatus:@"w请完善型号/库存信息"];
+            [SVProgressHUD dismissWithDelay:1.0];
+            return;
+        }
+        
         NSNumber *modelNumber = [NSNumber numberWithInteger:(modelNumberInput.text).integerValue];
+        
         NSDictionary *modelInfo = @{@"commodityModel":modelNameString, @"stockNumber":modelNumber};
         
         [modelArray addObject:modelInfo];

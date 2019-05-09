@@ -83,6 +83,23 @@
 }
 
 -(void)registerWork {
+    
+    if ([self.accountInput.text isEqual:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入手机号"];
+        [SVProgressHUD dismissWithDelay:0.8];
+        return;
+    }
+    if ([self.passwordInput.text isEqual:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入密码"];
+        [SVProgressHUD dismissWithDelay:0.8];
+        return;
+    }
+    if ([self.verifiedCode.text isEqual:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入验证码"];
+        [SVProgressHUD dismissWithDelay:0.8];
+        return;
+    }
+    
     [AVUser signUpOrLoginWithMobilePhoneNumberInBackground:self.accountInput.text smsCode:self.verifiedCode.text block:^(AVUser * _Nullable user, NSError * _Nullable error) {
         if (error == nil) {
             self.userId = user.objectId;
@@ -92,11 +109,37 @@
             [[AVUser currentUser] setObject:@"未命名" forKey:@"nickName"];
             [[AVUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 if (error == nil) {
-                    [SVProgressHUD showSuccessWithStatus:@"已注册成功"];
-                    [SVProgressHUD dismissWithDelay:1.0];
-                    [[self getCurrentVC] dismissViewControllerAnimated:true completion:nil];
+                    
+                    NSDictionary *params = @{
+                                             @"userId":self.userId,
+                                             @"name":@"一个新店",
+                                             @"info":@"店主还未写介绍呢"
+                                             };
+                    [AVCloud callFunctionInBackground:@"createShop" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+                        if (error == nil) {
+                            if ([[object valueForKey:@"success"] boolValue]) {
+                                [SVProgressHUD showSuccessWithStatus:@"已注册成功"];
+                                [SVProgressHUD dismissWithDelay:1.0];
+                                [self.userSetting setValue:[[object valueForKey:@"result"] valueForKey:@"objectId"] forKey:@"shopId"];
+                                [[self getCurrentVC] dismissViewControllerAnimated:true completion:nil];
+                            }
+                        }else {
+                            [SVProgressHUD showSuccessWithStatus:@"已注册成功"];
+                            [SVProgressHUD dismissWithDelay:1.0];
+                            [[self getCurrentVC] dismissViewControllerAnimated:true completion:nil];
+                        }
+                    }];
+                    
                 }
             }];
+        }else {
+            if (error.code == 603) {
+                [SVProgressHUD showErrorWithStatus:@"验证码错误"];
+                [SVProgressHUD dismissWithDelay:1.0];
+            }else if (error.code == 127){
+                [SVProgressHUD showErrorWithStatus:@"无效的手机号"];
+                [SVProgressHUD dismissWithDelay:1.0];
+            }
         }
     }];
 }
@@ -123,10 +166,25 @@
 
 -(void)getVerifiedCode {
     NSString *phoneNumber = self.accountInput.text;
+    if ([phoneNumber isEqual:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"请输入手机号"];
+        [SVProgressHUD dismissWithDelay:0.8];
+        return;
+    }
     
     [AVSMS requestShortMessageForPhoneNumber:phoneNumber options:nil callback:^(BOOL succeeded, NSError * _Nullable error) {
-        [SVProgressHUD showSuccessWithStatus:@"验证码已发送"];
-        [SVProgressHUD dismissWithDelay:1.0];
+        if (error == nil) {
+            [SVProgressHUD showSuccessWithStatus:@"验证码已发送"];
+            [SVProgressHUD dismissWithDelay:0.5];
+        }else {
+            if (error.code == 127) {
+                [SVProgressHUD showErrorWithStatus:@"无效的手机号"];
+                [SVProgressHUD dismissWithDelay:0.8];
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"请检查手机号码格式"];
+                [SVProgressHUD dismissWithDelay:0.8];
+            }
+        }
     }];
 }
 
