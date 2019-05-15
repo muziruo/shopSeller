@@ -12,6 +12,7 @@
 #import "staticticsTableViewCell.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "loginViewController.h"
+#import "verifiedUserViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

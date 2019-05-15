@@ -13,6 +13,7 @@
 @property NSArray *orderInfo;
 @property UIStoryboard *mainStoryBroad;
 @property NSUserDefaults *userSetting;
+@property NSNumber *page;
 
 @end
 
@@ -28,29 +29,92 @@
     self.orderTableview.rowHeight = UITableViewAutomaticDimension;
     
     self.orderTableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getShipOrderInfo)];
+    self.orderTableview.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(getMoreShipOrderInfo)];
+    
+    self.page = @1;
+    
+    [self.orderTableview.mj_header beginRefreshing];
     // Do any additional setup after loading the view.
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.orderTableview.mj_header beginRefreshing];
+    
 }
 
 
 -(void)getShipOrderInfo {
-    NSDictionary *params = @{@"shopId":[self.userSetting valueForKey:@"shopId"]};
+    
+    NSDictionary *params = @{
+                             @"shopId":[self.userSetting valueForKey:@"shopId"],
+                             @"page":@0
+                             };
     [AVCloud callFunctionInBackground:@"shopGetShipOrder" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
         if (error == nil) {
             if ([object valueForKey:@"success"]) {
                 self.orderInfo = [object valueForKey:@"result"];
+                self.page = @1;
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     [self.orderTableview reloadData];
                     [self.orderTableview.mj_header endRefreshing];
                 }];
+            }else {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [self.orderTableview reloadData];
+                    [self.orderTableview.mj_header endRefreshing];
+                }];
+                [SVProgressHUD showErrorWithStatus:@"获取信息失败，请重新刷新"];
+                [SVProgressHUD dismissWithDelay:2.0];
             }
+        }else{
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.orderTableview reloadData];
+                [self.orderTableview.mj_header endRefreshing];
+            }];
+            [SVProgressHUD showErrorWithStatus:@"获取信息失败，请重新刷新"];
+            [SVProgressHUD dismissWithDelay:2.0];
         }
     }];
 }
+
+
+
+-(void)getMoreShipOrderInfo {
+    
+    NSDictionary *params = @{
+                             @"shopId":[self.userSetting valueForKey:@"shopId"],
+                             @"page":self.page
+                             };
+    [AVCloud callFunctionInBackground:@"shopGetShipOrder" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+        if (error == nil) {
+            if ([object valueForKey:@"success"]) {
+                [self.orderInfo arrayByAddingObjectsFromArray:[object valueForKey:@"result"]];
+                int nextPage = self.page.intValue + 1;
+                self.page = [NSNumber numberWithInt:nextPage];
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [self.orderTableview reloadData];
+                    [self.orderTableview.mj_footer endRefreshing];
+                }];
+            }else {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [self.orderTableview reloadData];
+                    [self.orderTableview.mj_footer endRefreshing];
+                }];
+                [SVProgressHUD showErrorWithStatus:@"获取信息失败，请重新刷新"];
+                [SVProgressHUD dismissWithDelay:2.0];
+            }
+        }else{
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.orderTableview reloadData];
+                [self.orderTableview.mj_footer endRefreshing];
+            }];
+            [SVProgressHUD showErrorWithStatus:@"获取信息失败，请重新刷新"];
+            [SVProgressHUD dismissWithDelay:2.0];
+        }
+    }];
+}
+
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

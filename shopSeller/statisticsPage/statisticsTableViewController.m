@@ -39,7 +39,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 2;
 }
 
 
@@ -48,15 +48,32 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    functionButtonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"functionCell"];
-    
-    if (!cell) {
-        cell = [[functionButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"functionCell"];
+    if (indexPath.row == 0) {
+        functionButtonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"functionCell"];
+        
+        if (!cell) {
+            cell = [[functionButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"functionCell"];
+        }
+        
+        [cell.functionButton setTitle:@"实名认证" forState:UIControlStateNormal];
+        
+        cell.functionButton.backgroundColor = UIColor.themeMainColor;
+        
+        [cell.functionButton addTarget:self action:@selector(userVerified) forControlEvents:UIControlEventTouchUpInside];
+        
+        return cell;
+    }else if (indexPath.row == 1){
+        functionButtonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"functionCell"];
+        
+        if (!cell) {
+            cell = [[functionButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"functionCell"];
+        }
+        
+        [cell.functionButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
+        
+        return cell;
     }
-    
-    [cell.functionButton addTarget:self action:@selector(userLogout) forControlEvents:UIControlEventTouchUpInside];
-    
-    return cell;
+    return nil;
 }
 
 
@@ -64,6 +81,11 @@
     [AVUser logOut];
     loginViewController *loginView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"loginView"];
     [self presentViewController:loginView animated:true completion:nil];
+}
+
+-(void)userVerified {
+    verifiedUserViewController *verifiedView = [self.mainStoryBroad instantiateViewControllerWithIdentifier:@"userVerifiedView"];
+    [self.navigationController pushViewController:verifiedView animated:true];
 }
 
 /*

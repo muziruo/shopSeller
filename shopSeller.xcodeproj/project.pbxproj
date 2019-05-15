@@ -46,6 +46,12 @@
 		EEB0A712226F661600066371 /* staticticsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB0A711226F661600066371 /* staticticsTableViewCell.m */; };
 		EEB0A716226F666500066371 /* UIFont+themeUIFont.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB0A715226F666500066371 /* UIFont+themeUIFont.m */; };
 		EEB0A719226F667800066371 /* UIColor+themeUIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB0A718226F667800066371 /* UIColor+themeUIColor.m */; };
+		EEC8CE2922884723000D3EB9 /* waitReceiptViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC8CE2722884723000D3EB9 /* waitReceiptViewController.h */; };
+		EEC8CE2A22884723000D3EB9 /* waitReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC8CE2822884723000D3EB9 /* waitReceiptViewController.m */; };
+		EEC8CE2D22884741000D3EB9 /* waitEvaluateViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC8CE2B22884741000D3EB9 /* waitEvaluateViewController.h */; };
+		EEC8CE2E22884741000D3EB9 /* waitEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC8CE2C22884741000D3EB9 /* waitEvaluateViewController.m */; };
+		EEC8CE35228C672D000D3EB9 /* verifiedUserViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC8CE33228C672D000D3EB9 /* verifiedUserViewController.h */; };
+		EEC8CE36228C672D000D3EB9 /* verifiedUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC8CE34228C672D000D3EB9 /* verifiedUserViewController.m */; };
 		EED289FF2276A58E007725AE /* commodityListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EED289FD2276A58E007725AE /* commodityListViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EED28A002276A58E007725AE /* commodityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED289FE2276A58E007725AE /* commodityListViewController.m */; };
 		EED28A032276BF61007725AE /* onSellViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EED28A012276BF61007725AE /* onSellViewController.h */; };
@@ -135,6 +141,12 @@
 		EEB0A715226F666500066371 /* UIFont+themeUIFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+themeUIFont.m"; sourceTree = "<group>"; };
 		EEB0A717226F667800066371 /* UIColor+themeUIColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+themeUIColor.h"; sourceTree = "<group>"; };
 		EEB0A718226F667800066371 /* UIColor+themeUIColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+themeUIColor.m"; sourceTree = "<group>"; };
+		EEC8CE2722884723000D3EB9 /* waitReceiptViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = waitReceiptViewController.h; sourceTree = "<group>"; };
+		EEC8CE2822884723000D3EB9 /* waitReceiptViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = waitReceiptViewController.m; sourceTree = "<group>"; };
+		EEC8CE2B22884741000D3EB9 /* waitEvaluateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = waitEvaluateViewController.h; sourceTree = "<group>"; };
+		EEC8CE2C22884741000D3EB9 /* waitEvaluateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = waitEvaluateViewController.m; sourceTree = "<group>"; };
+		EEC8CE33228C672D000D3EB9 /* verifiedUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = verifiedUserViewController.h; sourceTree = "<group>"; };
+		EEC8CE34228C672D000D3EB9 /* verifiedUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = verifiedUserViewController.m; sourceTree = "<group>"; };
 		EED289FD2276A58E007725AE /* commodityListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = commodityListViewController.h; sourceTree = "<group>"; };
 		EED289FE2276A58E007725AE /* commodityListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = commodityListViewController.m; sourceTree = "<group>"; };
 		EED28A012276BF61007725AE /* onSellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = onSellViewController.h; sourceTree = "<group>"; };
@@ -305,6 +317,8 @@
 				EEB0A70E226F636C00066371 /* statisticsTableViewController.m */,
 				EEB0A710226F661600066371 /* staticticsTableViewCell.h */,
 				EEB0A711226F661600066371 /* staticticsTableViewCell.m */,
+				EEC8CE33228C672D000D3EB9 /* verifiedUserViewController.h */,
+				EEC8CE34228C672D000D3EB9 /* verifiedUserViewController.m */,
 			);
 			path = statisticsPage;
 			sourceTree = "<group>";
@@ -322,6 +336,10 @@
 				EE3EFFD6227C8E8400B14056 /* shipOrderViewController.m */,
 				EE3EFFD9227C901100B14056 /* orderDetailTableViewCell.h */,
 				EE3EFFDA227C901100B14056 /* orderDetailTableViewCell.m */,
+				EEC8CE2722884723000D3EB9 /* waitReceiptViewController.h */,
+				EEC8CE2822884723000D3EB9 /* waitReceiptViewController.m */,
+				EEC8CE2B22884741000D3EB9 /* waitEvaluateViewController.h */,
+				EEC8CE2C22884741000D3EB9 /* waitEvaluateViewController.m */,
 			);
 			path = orderPage;
 			sourceTree = "<group>";
@@ -372,12 +390,15 @@
 				EE3AABFC2271B9F500A5BC94 /* homeTableViewCell.h in Headers */,
 				EED28A0B2276CB68007725AE /* commodityListTableViewCell.h in Headers */,
 				EE8CF4F222828CB800BD587E /* registerViewController.h in Headers */,
+				EEC8CE2D22884741000D3EB9 /* waitEvaluateViewController.h in Headers */,
 				EE3EFFCF227C7CA100B14056 /* waitShipViewController.h in Headers */,
 				EE3EFFD7227C8E8400B14056 /* shipOrderViewController.h in Headers */,
 				EE8CF4F122828CB800BD587E /* loginViewController.h in Headers */,
+				EEC8CE35228C672D000D3EB9 /* verifiedUserViewController.h in Headers */,
 				EE8CF4EF22828CB800BD587E /* listViewController.h in Headers */,
 				EE3EFFDB227C901100B14056 /* orderDetailTableViewCell.h in Headers */,
 				EEE26883227DD0270093FB56 /* addModelViewController.h in Headers */,
+				EEC8CE2922884723000D3EB9 /* waitReceiptViewController.h in Headers */,
 				EE8CF4F022828CB800BD587E /* verifyCodeLoginViewController.h in Headers */,
 				EEE2687F227DA6880093FB56 /* editCommodityViewController.h in Headers */,
 				EE3AAC0722735AA400A5BC94 /* addCommodityViewController.h in Headers */,
@@ -578,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEE26880227DA6880093FB56 /* editCommodityViewController.m in Sources */,
+				EEC8CE2A22884723000D3EB9 /* waitReceiptViewController.m in Sources */,
 				EEB0A70C226F635300066371 /* orderTableViewController.m in Sources */,
 				EEB0A716226F666500066371 /* UIFont+themeUIFont.m in Sources */,
 				EE3EFFD8227C8E8400B14056 /* shipOrderViewController.m in Sources */,
@@ -595,11 +617,13 @@
 				EED28A002276A58E007725AE /* commodityListViewController.m in Sources */,
 				EEB0A712226F661600066371 /* staticticsTableViewCell.m in Sources */,
 				EEB0A705226F5E2800066371 /* homeTableViewController.m in Sources */,
+				EEC8CE36228C672D000D3EB9 /* verifiedUserViewController.m in Sources */,
 				EEB0A70F226F636C00066371 /* statisticsTableViewController.m in Sources */,
 				EED28A082276C02B007725AE /* onDepotViewController.m in Sources */,
 				EED28A042276BF61007725AE /* onSellViewController.m in Sources */,
 				EED28A102276CF51007725AE /* shopInfoManageViewController.m in Sources */,
 				EEB0A6DC226F5B7F00066371 /* main.m in Sources */,
+				EEC8CE2E22884741000D3EB9 /* waitEvaluateViewController.m in Sources */,
 				EEB0A708226F628A00066371 /* homeTableViewCell.m in Sources */,
 				EEB0A719226F667800066371 /* UIColor+themeUIColor.m in Sources */,
 				EE3EFFD4227C7CFD00B14056 /* orderTableViewCell.m in Sources */,
